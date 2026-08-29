@@ -65,20 +65,31 @@ Road` (3) belong to other societies — the "wider pocket" from the demand threa
 - Furnishing strings need normalization too: one row says `semi furnished`
   (no hyphen).
 
-## The numbers that matter (candidate rules: quarantine 5, stale >21d out, strict dedup)
+## The numbers that matter (RATIFIED rules — canonical, pipeline-verified)
 
-| Step | N | Median ask | Range |
-|---|---|---|---|
-| Raw pull | 86 | ₹59,000 | ₹12,000–₹185,000 |
-| 2BHK, minus quarantine | 82 | ₹59,000 | ₹45,500–₹72,000 |
-| Fresh (≤21d) | 71 | ₹58,500 | — |
-| After dedup | 60 | ₹58,000 | — |
-| Lakeview family (bridged) | 29 | ₹59,500 | ₹51,000–₹72,000 |
-| **Tier 1: + semi-furnished** | **19** | **₹59,500** | **₹55,500–₹63,000** |
-| Tier 2: micromarket semi-furnished | 37 | ₹59,000 | ₹54,000–₹65,000 |
+Correction 2026-08-30: the first version of this table used a preview 21-day
+cutoff and a dedup bug that swallowed CP-0026 into the cross-society suspect
+pair. Under the ratified rules (quarantine 5 · stale >30d out · 15–30d half
+weight · strict same-family dedup · suspects stay contributing) the canonical
+walk, verified independently in Python and in the TypeScript pipeline's tests:
 
-- Tier-1 median is rock-stable: leave-one-out swing ₹0; unchanged across staleness
-  cutoffs 14/21/30. High confidence is *earned* here.
+| Step | N | Median ask |
+|---|---|---|
+| Raw pull | 86 | ₹59,000 |
+| 2BHK only | 84 | ₹59,000 |
+| minus quarantine (5 rows) | 81 | ₹59,000 |
+| alive within 30d of snapshot | 71 | ₹58,500 |
+| one row per physical unit | 61 | ₹58,000 |
+| Lakeview family (bridged names) | 31 | ₹58,500 |
+| **Tier 1: + semi-furnished** | **21** | **₹59,500** (range ₹55,500–₹63,000) |
+| Tier 2: micromarket semi-furnished | 39 | ₹58,500 |
+
+- Tier-1 is rock-stable: trust-weighted median also ₹59,500; leave-one-out swing
+  ₹0; effective evidence 16.0 weighted rows across 4 sources. High confidence is
+  *earned* here — and the confidence ladder runs on **effective N = Σ trust
+  weights** with AND-ed criteria per level (amendment to ratified rule 7:
+  half-weight ceiling/gray evidence must not buy full confidence, and a
+  tiny-but-stable segment must not test "medium" on stability alone).
 - **The honest headline: the raw median (₹59,000) was nearly right — by accident.**
   The junk was symmetric this time (₹12k error vs ₹185k error cancel; furnishing mix
   averages out). What cleaning actually buys: (1) you *know* the number instead of
