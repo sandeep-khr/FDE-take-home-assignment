@@ -5,7 +5,6 @@ import ReasonTag from '../components/ReasonTag';
 import SectionHeader from '../components/SectionHeader';
 import { inr, usePipeline } from '../state';
 
-const QUARANTINE_ORDER = ['CP-0081', 'CP-0082', 'CP-0083', 'CP-0084', 'CP-0085'];
 
 /** Stage 2: every row graded, every grade explained, every call reversible. */
 export default function TrustBoard() {
@@ -13,7 +12,9 @@ export default function TrustBoard() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [reason, setReason] = useState('');
 
-  const quarantined = QUARANTINE_ORDER.map(id => result.listings.find(l => l.listingId === id)!);
+  const quarantined = result.listings.filter(l =>
+    result.trust[l.listingId]!.reasons.some(r => r.effect === 'quarantine'),
+  );
   const tally = { A: 0, B: 0, C: 0, D: 0 };
   for (const t of Object.values(result.trust)) tally[t.grade]++;
   const byGradeThenId = [...result.listings].sort((a, b) => {
@@ -53,8 +54,15 @@ export default function TrustBoard() {
       </div>
 
       <h3 style={{ fontFamily: 'var(--serif)', fontSize: 30, fontWeight: 400, margin: '0 0 18px', textWrap: 'balance' }}>
-        The quarantine, first — five rows whose values cannot all be true
+        The quarantine, first — {quarantined.length === 5 ? 'five' : quarantined.length} row
+        {quarantined.length === 1 ? '' : 's'} whose values cannot all be true
       </h3>
+      {quarantined.length === 0 && (
+        <p className="scene-lede" style={{ marginBottom: 40 }}>
+          Nothing in this pull tripped a quarantine rule — every row's values could at least all
+          be true at once.
+        </p>
+      )}
       <div className="card-grid" style={{ marginBottom: 44 }}>
         {quarantined.map(l => {
           const t = result.trust[l.listingId]!;
@@ -70,7 +78,7 @@ export default function TrustBoard() {
                 {l.deposit ? <> · dep {inr(l.deposit)}</> : null}
               </p>
               <p className="story">{story.label}</p>
-              {l.listingId === 'CP-0081' && (
+              {t.reasons.some(r => r.code === 'subject-echo') && (
                 <p style={{ fontSize: 13.5, marginTop: 10, color: '#7e241c', fontWeight: 600 }}>
                   The deepest trap in the pull: the subject deal itself, cross-posted by a broker
                   with the wrong BHK. Count it, and the landlord&rsquo;s ask validates itself.

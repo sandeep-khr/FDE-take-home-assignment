@@ -116,6 +116,38 @@ a { color: inherit; text-underline-offset: 3px; }
   color: var(--ink-45);
 }
 
+/* ---------------- pipeline map (the route, with live counts) ------ */
+.pipe-wrap { margin-top: 54px; }
+.pipe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  background: #fffdf8;
+  padding: 18px 22px;
+}
+.pipe-step { display: flex; align-items: center; gap: 10px; }
+.pipe-arrow { color: var(--ink-45); font-size: 14px; }
+.pipe-node {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  min-width: 118px;
+  transition: background 0.2s;
+}
+.pipe-node:hover { background: var(--linen); }
+.pipe-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--pine); }
+.pipe-value { font-family: var(--serif); font-size: 22px; line-height: 1.1; font-weight: 400; }
+.pipe-hint { font-size: 11.5px; color: var(--ink-45); max-width: 22ch; }
+.pipe-tool { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+.pipe-note { font-size: 12px; color: var(--ink-45); }
+.pipe-error { margin-top: 10px; font-size: 13.5px; color: #7e241c; background: var(--brick-tint); border-radius: 10px; padding: 10px 14px; max-width: 720px; }
+
 /* ---------------- the census (signature element) ------------------ */
 .dots { display: flex; flex-wrap: wrap; gap: 6px; max-width: 980px; }
 .dot {

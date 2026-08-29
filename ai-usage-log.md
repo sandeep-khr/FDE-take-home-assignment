@@ -108,3 +108,12 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   reporting as labeled context. REJECTED — probabilistic linkage in code,
   numeric similarity weights, platform trust hierarchy (no in-packet
   evidence), min-ask cluster representative.
+
+## 2026-08-30 (hero map + upload tool)
+
+- Candidate asked for a pipeline illustration on the hero and an upload mode.
+  Claude added the pipeline map (file → graded → units → tier 1 → benchmark →
+  verdict, live counts, chapter links) and client-side CSV upload through the
+  identical pipeline (validated before commit; loud failure; overrides reset;
+  nothing leaves the browser). Hardcoded quarantine ids in the UI were
+  replaced with data-derived ones so arbitrary files can't crash the page.

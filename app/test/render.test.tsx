@@ -1,8 +1,14 @@
-import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import App from '../src/App';
 
 afterEach(cleanup);
+
+const MINI_CSV = [
+  'listing_id,source,posted_date,last_seen_date,society,locality,bhk,furnishing,area_sqft,rent,deposit,photo_count,poster_type',
+  'UP-0001,NoBroker,2026-08-01,2026-08-16,Lakeview Residences,Harlur,2,semi-furnished,1100,58000,174000,5,owner',
+  'UP-0002,Housing,2026-08-02,2026-08-15,Lakeview Residences,Harlur,2,semi-furnished,1120,60000,180000,7,broker',
+].join('\n');
 
 describe('the review app', () => {
   it('renders the hero with real pipeline numbers', () => {
@@ -51,6 +57,32 @@ describe('the review app', () => {
     expect(screen.getByText('staleExcludeAfterDays')).toBeTruthy();
     expect(screen.getByText('30 d')).toBeTruthy();
     expect(screen.getByText('minIndependentBridgesToMerge')).toBeTruthy();
+  });
+
+  it('renders the pipeline map with live counts and the upload affordance', () => {
+    render(<App />);
+    expect(screen.getByText('86 rows')).toBeTruthy();
+    expect(screen.getByText('21 earn weight')).toBeTruthy();
+    expect(screen.getByText('Run your own pull through this pipeline')).toBeTruthy();
+    expect(screen.getByText(/nothing leaves this tab/i)).toBeTruthy();
+  });
+
+  it('upload: a valid CSV re-runs the whole pipeline on the new rows', async () => {
+    render(<App />);
+    const input = screen.getByLabelText('Upload a listings CSV');
+    fireEvent.change(input, { target: { files: [new File([MINI_CSV], 'mini.csv', { type: 'text/csv' })] } });
+    await waitFor(() => expect(screen.getByText(/custom pull: mini\.csv/)).toBeTruthy());
+    expect(screen.getByText('2 rows')).toBeTruthy();
+    expect(screen.getByText('2 raw listings')).toBeTruthy();
+    expect(screen.getByText('Back to the case packet')).toBeTruthy();
+  });
+
+  it('upload: a broken file fails loudly and leaves the analysis untouched', async () => {
+    render(<App />);
+    const input = screen.getByLabelText('Upload a listings CSV');
+    fireEvent.change(input, { target: { files: [new File(['hello,world'], 'bad.csv', { type: 'text/csv' })] } });
+    await waitFor(() => expect(screen.getByText(/Couldn’t use that file/)).toBeTruthy());
+    expect(screen.getByText('86 rows')).toBeTruthy(); // packet analysis intact
   });
 
   it('live override: excluding a tier1 comp shrinks the funnel and logs the reason', () => {

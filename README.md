@@ -11,8 +11,11 @@ reason, and a reviewer who can overturn any call and watch the arithmetic re-run
 Open the app (deployed link in the submission email, or `npm run dev` below) and
 scroll — the page is the pipeline, in order:
 
-1. **The ticker + funnel rail** — the verdict up front: 86 raw → 21 tier-1 rows,
-   ₹59,500, high confidence. The rail is live; it moves when you override a row.
+1. **The hero** — the census (one cell per listing) and the pipeline map:
+   file → graded → units → tier-1 → benchmark → verdict, with live counts. Drop
+   your own same-schema CSV through the identical pipeline — parsed entirely in
+   your browser, nothing is transmitted; broken files fail loudly and leave the
+   analysis untouched.
 2. **01 · The pull** — all 86 raw rows, untouched. The trap: this table's median
    looks exactly as precise as a good one.
 3. **02 · The grade** — every row graded A–D with plain-language reasons. Meet the
