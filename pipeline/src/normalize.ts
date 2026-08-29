@@ -29,6 +29,13 @@ export function nameKeyOf(society: string): { nameKey: string; stem: string; pha
   return { nameKey: phase ? `${stem} ${phase}` : stem, stem, phase };
 }
 
+/**
+ * Family group key: drops a trailing "res" so "Fern Grove" and "Fern Grove
+ * Residency" compare as one candidate family, while suffixes that name a
+ * different project ("...apartments") keep families apart.
+ */
+export const resGroupKey = (stem: string): string => stem.replace(/res$/, '');
+
 const FURNISHING_MAP: Record<string, FurnishingNorm> = {
   'semi-furnished': 'semi-furnished',
   'semi furnished': 'semi-furnished',
