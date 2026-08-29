@@ -68,3 +68,14 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   listing a physical cell, judged as the story progresses), oversized chapter
   numerals, tables demoted behind progressive disclosure, one inversion moment
   (the refusal chapter on deep pine). Tests unchanged and green throughout.
+
+## 2026-08-30 (map decision)
+
+- Candidate proposed plotting the 86 listings on a locality map in the hero to
+  show "which locality is fooling more." Checked against the data together:
+  no coordinates, anonymised societies (packet forbids identification), and
+  junk-by-locality differences are noise on tiny, unreliable samples (e.g.
+  5/14 vs 3/29) while the real concentration is behavioral (broker rows 36%
+  junk/dup vs 22% owner). Candidate's call: no map in the proof of work; the
+  idea is banked as a production execution-plan item (geo trust telemetry once
+  real coordinates exist) and a scope-cut line in the approach note.
