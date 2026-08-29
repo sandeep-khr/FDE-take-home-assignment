@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildUnitClusters, findClonePairs } from '../src/clones';
-import { buildSegments, weightedMedian } from '../src/estimate';
+import { bootstrapBand, buildSegments, confidenceOf, weightedMedian } from '../src/estimate';
 import { normalizeListing } from '../src/normalize';
 import { assessTrust } from '../src/trust';
 import { DEFAULT_CONFIG, type TrustDecision } from '../src/types';
@@ -69,6 +69,37 @@ describe('furnished-lakeview (the failure case)', () => {
   it('confidence is low: 4 rows but only 3.0 effective evidence', () => {
     expect(f.confidence).toBe('low');
     expect(f.collectNext.length).toBeGreaterThan(0);
+  });
+});
+
+describe('uncertainty maths', () => {
+  const t1 = seg('tier1');
+  it('bootstrap band is deterministic, inside the range, and brackets the median', () => {
+    const again = bootstrapBand(
+      t1.contributingIds.map(id => ({
+        value: listings.find(l => l.listingId === id)!.rent,
+        weight: trust[id]!.weight,
+      })),
+      DEFAULT_CONFIG.bootstrap,
+    );
+    expect(t1.band).toEqual(again); // same seed → same band
+    const [lo, hi] = t1.band!;
+    expect(lo).toBeLessThanOrEqual(t1.weightedMedian!);
+    expect(hi).toBeGreaterThanOrEqual(t1.weightedMedian!);
+    expect(lo).toBeGreaterThanOrEqual(t1.range![0]);
+    expect(hi).toBeLessThanOrEqual(t1.range![1]);
+  });
+  it('MAD is a sane robust spread for tier1', () => {
+    expect(t1.mad).toBeGreaterThan(0);
+    expect(t1.mad).toBeLessThan(5000);
+  });
+  it('band is null when fewer than 2 contributors', () => {
+    expect(seg('bhk3').band).toBeNull();
+  });
+  it('spread-ratio guardrail caps confidence at LOW however big the sample', () => {
+    expect(confidenceOf(10, 4, 0, 5, 2.5, DEFAULT_CONFIG.ladder)).toBe('low');
+    expect(confidenceOf(10, 4, 0, 5, 1.2, DEFAULT_CONFIG.ladder)).toBe('high');
+    expect(t1.spreadRatio).toBeLessThan(DEFAULT_CONFIG.ladder.spreadRatioCap);
   });
 });
 

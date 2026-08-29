@@ -88,3 +88,23 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   audit-trail document with a numbered assumption register (packet facts vs
   ratified rules vs conventions), hand-verification recipes, and a
   challenge-first list. Verification and any rule changes are the candidate's.
+
+## 2026-08-30 (research integration)
+
+- Candidate brought external research (AVM FSD confidence, Splink-style record
+  linkage, reported Indian rental-fraud patterns, MAD/bootstrap statistics,
+  delisting-speed signal, photo perceptual hashes) and patterns from their own
+  prior production system "reflect" (validator expected/actual transparency,
+  spread-ratio thresholds, precedence dedup) — with an explicit instruction
+  not to implement blindly.
+- Rulings made together: ADOPTED in code — seeded-bootstrap rupee band + MAD
+  (withheld below 5 rows: a tiny-sample band fakes precision), spread-ratio
+  confidence cap (ported production threshold, tightened 3×→2× for rentals),
+  validator-style expected/actual/involvedFields on every effectful reason,
+  delisting-speed panel (display only, never in the math), photo-pHash as
+  data fix #2. ADOPTED as citations/roadmap — FSD as the calibration target
+  (rejected as a computed label: no transaction data to calibrate against),
+  Fellegi-Sunter/Splink as the 27k-listing scale path, fraud-pattern
+  reporting as labeled context. REJECTED — probabilistic linkage in code,
+  numeric similarity weights, platform trust hierarchy (no in-packet
+  evidence), min-ask cluster representative.

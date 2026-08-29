@@ -79,9 +79,13 @@ export default function VerdictPanel() {
           </li>
         </ul>
       </div>
-      <p style={{ marginTop: 14 }}>
+      <p style={{ marginTop: 14, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
         <span className="chip" style={{ background: 'var(--pine-tint)', borderColor: 'color-mix(in srgb, var(--pine) 30%, transparent)', color: 'var(--pine-deep)' }}>
-          Top data fix: capture maintenance-inclusion per listing at scrape time
+          Data fix #1: capture maintenance-inclusion per listing at scrape time
+        </span>
+        <span className="chip" style={{ background: 'var(--pine-tint)', borderColor: 'color-mix(in srgb, var(--pine) 30%, transparent)', color: 'var(--pine-deep)' }}>
+          Data fix #2: perceptual hashes of listing photos — identical photos under two broker
+          numbers is a near-certain duplicate
         </span>
       </p>
     </section>

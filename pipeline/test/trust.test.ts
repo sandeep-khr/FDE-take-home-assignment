@@ -32,6 +32,13 @@ describe('quarantine rules', () => {
   it('CP-0085 carries the stale reason too (reasons stack)', () => {
     expect(codes('CP-0085')).toContain('stale-dead');
   });
+
+  it('reasons carry validator-style expected/actual/involvedFields detail', () => {
+    const r = decide('CP-0084').reasons.find(r => r.code === 'impossible-dates')!;
+    expect(r.expected).toContain('on or after');
+    expect(r.actual).toContain('2026-08-11');
+    expect(r.involvedFields).toMatchObject({ posted_date: '2026-08-16', last_seen_date: '2026-08-11' });
+  });
 });
 
 describe('staleness and aspiration', () => {

@@ -36,8 +36,17 @@
       "highMaxMedianAgeDays": 45,
       "mediumMinN": 4,
       "mediumMaxLooSwing": 2500,
-      "lowMinN": 2
+      "lowMinN": 2,
+      "spreadRatioCap": 2
     },
+    "bootstrap": {
+      "seed": 20260818,
+      "iterations": 1000,
+      "lowerPct": 10,
+      "upperPct": 90,
+      "minN": 5
+    },
+    "fastDelistMaxWindowDays": 21,
     "subject": {
       "society": "Lakeview Residences",
       "areaSqft": 1175,
@@ -2334,7 +2343,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 87d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 87d and still listed 3d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-20",
+            "last_seen_date": "2026-08-15",
+            "rent": 55500
+          }
         },
         {
           "code": "deposit-template",
@@ -2351,7 +2367,12 @@
         {
           "code": "stale-dead",
           "label": "not seen for 77d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-06-02 (77d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-06-02"
+          }
         },
         {
           "code": "unknown-poster",
@@ -2414,7 +2435,12 @@
         {
           "code": "stale-gray",
           "label": "not seen for 17d (14–30d gray zone) — half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "seen within 14d for full weight",
+          "actual": "17d dark",
+          "involvedFields": {
+            "last_seen_date": "2026-08-01"
+          }
         }
       ]
     },
@@ -2426,7 +2452,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 83d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 83d and still listed 10d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-17",
+            "last_seen_date": "2026-08-08",
+            "rent": 58000
+          }
         }
       ]
     },
@@ -2438,7 +2471,12 @@
         {
           "code": "stale-gray",
           "label": "not seen for 15d (14–30d gray zone) — half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "seen within 14d for full weight",
+          "actual": "15d dark",
+          "involvedFields": {
+            "last_seen_date": "2026-08-03"
+          }
         }
       ]
     },
@@ -2450,7 +2488,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 94d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 94d and still listed 12d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-04",
+            "last_seen_date": "2026-08-06",
+            "rent": 58500
+          }
         },
         {
           "code": "few-photos",
@@ -2530,7 +2575,12 @@
         {
           "code": "stale-gray",
           "label": "not seen for 28d (14–30d gray zone) — half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "seen within 14d for full weight",
+          "actual": "28d dark",
+          "involvedFields": {
+            "last_seen_date": "2026-07-21"
+          }
         }
       ]
     },
@@ -2542,7 +2592,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 66d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 66d and still listed 14d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-30",
+            "last_seen_date": "2026-08-04",
+            "rent": 72000
+          }
         }
       ]
     },
@@ -2554,7 +2611,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 71d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 71d and still listed 5d ago",
+          "involvedFields": {
+            "posted_date": "2026-06-03",
+            "last_seen_date": "2026-08-13",
+            "rent": 58000
+          }
         }
       ]
     },
@@ -2584,7 +2648,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 65d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 65d and still listed 8d ago",
+          "involvedFields": {
+            "posted_date": "2026-06-06",
+            "last_seen_date": "2026-08-10",
+            "rent": 61000
+          }
         }
       ]
     },
@@ -2596,7 +2667,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 89d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 89d and still listed 3d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-18",
+            "last_seen_date": "2026-08-15",
+            "rent": 55000
+          }
         }
       ]
     },
@@ -2614,7 +2692,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 77d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 77d and still listed 6d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-27",
+            "last_seen_date": "2026-08-12",
+            "rent": 57000
+          }
         },
         {
           "code": "unknown-poster",
@@ -2631,7 +2716,12 @@
         {
           "code": "stale-dead",
           "label": "not seen for 38d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-07-11 (38d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-07-11"
+          }
         }
       ]
     },
@@ -2672,7 +2762,12 @@
         {
           "code": "stale-gray",
           "label": "not seen for 16d (14–30d gray zone) — half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "seen within 14d for full weight",
+          "actual": "16d dark",
+          "involvedFields": {
+            "last_seen_date": "2026-08-02"
+          }
         },
         {
           "code": "few-photos",
@@ -2694,7 +2789,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 98d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 98d and still listed 6d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-06",
+            "last_seen_date": "2026-08-12",
+            "rent": 62000
+          }
         }
       ]
     },
@@ -2706,7 +2808,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 97d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 97d and still listed 3d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-10",
+            "last_seen_date": "2026-08-15",
+            "rent": 51000
+          }
         },
         {
           "code": "deposit-template",
@@ -2723,7 +2832,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 117d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 117d and still listed 1d ago",
+          "involvedFields": {
+            "posted_date": "2026-04-22",
+            "last_seen_date": "2026-08-17",
+            "rent": 63000
+          }
         },
         {
           "code": "unknown-poster",
@@ -2745,7 +2861,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 68d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 68d and still listed 13d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-29",
+            "last_seen_date": "2026-08-05",
+            "rent": 54000
+          }
         },
         {
           "code": "few-photos",
@@ -2779,7 +2902,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 88d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 88d and still listed 8d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-14",
+            "last_seen_date": "2026-08-10",
+            "rent": 59500
+          }
         }
       ]
     },
@@ -2791,7 +2921,12 @@
         {
           "code": "stale-dead",
           "label": "not seen for 45d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-07-04 (45d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-07-04"
+          }
         }
       ]
     },
@@ -2803,7 +2938,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 90d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 90d and still listed 5d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-15",
+            "last_seen_date": "2026-08-13",
+            "rent": 65000
+          }
         },
         {
           "code": "unknown-poster",
@@ -2820,12 +2962,27 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Fern Grove Residency",
+            "area_sqft": 1155,
+            "rent": 59500,
+            "deposit": 178500
+          }
         },
         {
           "code": "aspirational-ask",
           "label": "listed 79d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 79d and still listed 10d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-21",
+            "last_seen_date": "2026-08-08",
+            "rent": 59500
+          }
         },
         {
           "code": "deposit-template",
@@ -2842,7 +2999,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 87d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 87d and still listed 7d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-16",
+            "last_seen_date": "2026-08-11",
+            "rent": 59000
+          }
         }
       ]
     },
@@ -2860,7 +3024,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 79d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 79d and still listed 7d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-24",
+            "last_seen_date": "2026-08-11",
+            "rent": 60500
+          }
         }
       ]
     },
@@ -2872,7 +3043,12 @@
         {
           "code": "stale-gray",
           "label": "not seen for 15d (14–30d gray zone) — half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "seen within 14d for full weight",
+          "actual": "15d dark",
+          "involvedFields": {
+            "last_seen_date": "2026-08-03"
+          }
         },
         {
           "code": "unknown-poster",
@@ -2894,7 +3070,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 83d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 83d and still listed 5d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-22",
+            "last_seen_date": "2026-08-13",
+            "rent": 59000
+          }
         }
       ]
     },
@@ -2940,7 +3123,12 @@
         {
           "code": "stale-dead",
           "label": "not seen for 66d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-06-13 (66d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-06-13"
+          }
         },
         {
           "code": "deposit-template",
@@ -2969,7 +3157,12 @@
         {
           "code": "stale-dead",
           "label": "not seen for 55d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-06-24 (55d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-06-24"
+          }
         }
       ]
     },
@@ -2981,7 +3174,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 88d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 88d and still listed 8d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-14",
+            "last_seen_date": "2026-08-10",
+            "rent": 54000
+          }
         }
       ]
     },
@@ -3005,7 +3205,12 @@
         {
           "code": "stale-dead",
           "label": "not seen for 84d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-05-26 (84d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-05-26"
+          }
         }
       ]
     },
@@ -3017,7 +3222,12 @@
         {
           "code": "stale-dead",
           "label": "not seen for 53d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-06-26 (53d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-06-26"
+          }
         }
       ]
     },
@@ -3029,7 +3239,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 115d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 115d and still listed 4d ago",
+          "involvedFields": {
+            "posted_date": "2026-04-21",
+            "last_seen_date": "2026-08-14",
+            "rent": 65500
+          }
         },
         {
           "code": "deposit-template",
@@ -3046,7 +3263,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 104d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 104d and still listed 11d ago",
+          "involvedFields": {
+            "posted_date": "2026-04-25",
+            "last_seen_date": "2026-08-07",
+            "rent": 54000
+          }
         }
       ]
     },
@@ -3070,7 +3294,12 @@
         {
           "code": "stale-gray",
           "label": "not seen for 16d (14–30d gray zone) — half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "seen within 14d for full weight",
+          "actual": "16d dark",
+          "involvedFields": {
+            "last_seen_date": "2026-08-02"
+          }
         },
         {
           "code": "unknown-poster",
@@ -3105,7 +3334,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 92d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 92d and still listed 8d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-10",
+            "last_seen_date": "2026-08-10",
+            "rent": 45500
+          }
         },
         {
           "code": "unknown-poster",
@@ -3128,7 +3364,14 @@
         {
           "code": "aspirational-ask",
           "label": "listed 96d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 96d and still listed 3d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-11",
+            "last_seen_date": "2026-08-15",
+            "rent": 58500
+          }
         },
         {
           "code": "deposit-template",
@@ -3240,7 +3483,15 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Lake View Residency",
+            "area_sqft": 1050,
+            "rent": 60500,
+            "deposit": 300000
+          }
         }
       ]
     },
@@ -3252,7 +3503,15 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Lake View Residency",
+            "area_sqft": 1375,
+            "rent": 63000,
+            "deposit": null
+          }
         },
         {
           "code": "unknown-poster",
@@ -3269,12 +3528,27 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Lake View Residency",
+            "area_sqft": 1100,
+            "rent": 58000,
+            "deposit": 348000
+          }
         },
         {
           "code": "aspirational-ask",
           "label": "listed 83d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 83d and still listed 10d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-17",
+            "last_seen_date": "2026-08-08",
+            "rent": 58000
+          }
         }
       ]
     },
@@ -3286,7 +3560,15 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Lake View Residency",
+            "area_sqft": 1350,
+            "rent": 68500,
+            "deposit": 274000
+          }
         },
         {
           "code": "unknown-poster",
@@ -3303,12 +3585,27 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Lake View Residency",
+            "area_sqft": 1050,
+            "rent": 58000,
+            "deposit": 348000
+          }
         },
         {
           "code": "aspirational-ask",
           "label": "listed 71d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 71d and still listed 5d ago",
+          "involvedFields": {
+            "posted_date": "2026-06-03",
+            "last_seen_date": "2026-08-13",
+            "rent": 58000
+          }
         }
       ]
     },
@@ -3320,12 +3617,25 @@
         {
           "code": "stale-dead",
           "label": "not seen for 38d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-07-11 (38d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-07-11"
+          }
         },
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Lake View Residency",
+            "area_sqft": 1350,
+            "rent": 61500,
+            "deposit": 307500
+          }
         },
         {
           "code": "few-photos",
@@ -3342,7 +3652,15 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Lake View Residency",
+            "area_sqft": 1275,
+            "rent": 62500,
+            "deposit": 187500
+          }
         },
         {
           "code": "unknown-poster",
@@ -3364,12 +3682,27 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Fern Grove Residency",
+            "area_sqft": 1155,
+            "rent": 59500,
+            "deposit": 178500
+          }
         },
         {
           "code": "aspirational-ask",
           "label": "listed 79d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 79d and still listed 10d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-21",
+            "last_seen_date": "2026-08-08",
+            "rent": 59500
+          }
         },
         {
           "code": "few-photos",
@@ -3391,12 +3724,25 @@
         {
           "code": "stale-dead",
           "label": "not seen for 66d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-06-13 (66d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-06-13"
+          }
         },
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "FernGrove Apartments",
+            "area_sqft": 930,
+            "rent": 60500,
+            "deposit": 181500
+          }
         },
         {
           "code": "deposit-template",
@@ -3413,12 +3759,25 @@
         {
           "code": "stale-dead",
           "label": "not seen for 53d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-06-26 (53d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-06-26"
+          }
         },
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Bluewater Height",
+            "area_sqft": 1220,
+            "rent": 65500,
+            "deposit": null
+          }
         }
       ]
     },
@@ -3430,12 +3789,27 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Maple Courtyard",
+            "area_sqft": 1130,
+            "rent": 46000,
+            "deposit": 273000
+          }
         },
         {
           "code": "aspirational-ask",
           "label": "listed 92d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
-          "effect": "downweight"
+          "effect": "downweight",
+          "expected": "filled or delisted within 60d",
+          "actual": "live 92d and still listed 8d ago",
+          "involvedFields": {
+            "posted_date": "2026-05-10",
+            "last_seen_date": "2026-08-10",
+            "rent": 46000
+          }
         },
         {
           "code": "unknown-poster",
@@ -3452,7 +3826,15 @@
         {
           "code": "duplicate-copy",
           "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "one row per physical unit",
+          "actual": "non-representative member of a clone cluster",
+          "involvedFields": {
+            "society": "Parkside Terrace",
+            "area_sqft": 1290,
+            "rent": 50000,
+            "deposit": 247500
+          }
         },
         {
           "code": "few-photos",
@@ -3469,7 +3851,15 @@
         {
           "code": "subject-echo",
           "label": "matches the subject deal’s area, deposit and timing — the deal must not benchmark against its own listing",
-          "effect": "quarantine"
+          "effect": "quarantine",
+          "expected": "not the subject property itself",
+          "actual": "same family, 1175sf ≈ subject 1175sf, deposit = subject ₹2,80,000, posted 2026-08-14",
+          "involvedFields": {
+            "society": "Lakeview Residences",
+            "area_sqft": 1175,
+            "deposit": 280000,
+            "posted_date": "2026-08-14"
+          }
         }
       ]
     },
@@ -3481,7 +3871,13 @@
         {
           "code": "impossible-price",
           "label": "₹10.9/sf outside the credible ₹25–₹90/sf band — error or non-comparable",
-          "effect": "quarantine"
+          "effect": "quarantine",
+          "expected": "rent per sqft within ₹25–₹90",
+          "actual": "₹10.9/sf",
+          "involvedFields": {
+            "rent": 12000,
+            "area_sqft": 1100
+          }
         },
         {
           "code": "few-photos",
@@ -3498,7 +3894,13 @@
         {
           "code": "impossible-price",
           "label": "₹156.8/sf outside the credible ₹25–₹90/sf band — error or non-comparable",
-          "effect": "quarantine"
+          "effect": "quarantine",
+          "expected": "rent per sqft within ₹25–₹90",
+          "actual": "₹156.8/sf",
+          "involvedFields": {
+            "rent": 185000,
+            "area_sqft": 1180
+          }
         }
       ]
     },
@@ -3510,7 +3912,13 @@
         {
           "code": "impossible-dates",
           "label": "last seen 2026-08-11 before posted 2026-08-16 — provenance broken",
-          "effect": "quarantine"
+          "effect": "quarantine",
+          "expected": "last_seen_date on or after posted_date",
+          "actual": "last seen 2026-08-11, posted 2026-08-16",
+          "involvedFields": {
+            "posted_date": "2026-08-16",
+            "last_seen_date": "2026-08-11"
+          }
         },
         {
           "code": "few-photos",
@@ -3532,12 +3940,23 @@
         {
           "code": "bhk-area-mislabel",
           "label": "1BHK at 2100sf sits outside 350–900sf — an attribute is wrong",
-          "effect": "quarantine"
+          "effect": "quarantine",
+          "expected": "1BHK area within 350–900sf",
+          "actual": "2100sf",
+          "involvedFields": {
+            "bhk": 1,
+            "area_sqft": 2100
+          }
         },
         {
           "code": "stale-dead",
           "label": "not seen for 106d (> 30d) — likely rented or withdrawn",
-          "effect": "exclude"
+          "effect": "exclude",
+          "expected": "seen within 30d of the 2026-08-18 snapshot",
+          "actual": "last seen 2026-05-04 (106d dark)",
+          "involvedFields": {
+            "last_seen_date": "2026-05-04"
+          }
         }
       ]
     },
@@ -3589,6 +4008,12 @@
         63000
       ],
       "looSwing": 0,
+      "mad": 1500,
+      "band": [
+        58500,
+        60000
+      ],
+      "spreadRatio": 1.135135135135135,
       "distinctSources": 4,
       "medianAgeDays": 6,
       "confidence": "high",
@@ -3646,6 +4071,12 @@
         65000
       ],
       "looSwing": 0,
+      "mad": 1500,
+      "band": [
+        58000,
+        59000
+      ],
+      "spreadRatio": 1.2037037037037037,
       "distinctSources": 4,
       "medianAgeDays": 7,
       "confidence": "high",
@@ -3668,6 +4099,9 @@
         72000
       ],
       "looSwing": 500,
+      "mad": 750,
+      "band": null,
+      "spreadRatio": 1.0746268656716418,
       "distinctSources": 3,
       "medianAgeDays": 10,
       "confidence": "low",
@@ -3686,6 +4120,9 @@
       "unweightedMedian": null,
       "range": null,
       "looSwing": null,
+      "mad": null,
+      "band": null,
+      "spreadRatio": null,
       "distinctSources": 0,
       "medianAgeDays": null,
       "confidence": "insufficient",

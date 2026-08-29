@@ -39,7 +39,7 @@ scroll — the page is the pipeline, in order:
 
 ```bash
 npm ci
-npm test        # 58 tests: pipeline ground truth + app render + live override
+npm test        # pipeline ground truth + app render + live override (63 tests)
 npm run dev     # app on http://localhost:5173
 npm run build   # static production build in dist/
 ```

@@ -75,6 +75,12 @@ export interface TrustReason {
   code: string;
   label: string;
   effect: ReasonEffect;
+  /** Validator-style transparency (pattern ported from a prior production
+   * comps-validation system): what the rule expected, what it saw, and the
+   * exact fields it looked at — so a reviewer can re-check the call by hand. */
+  expected?: string;
+  actual?: string;
+  involvedFields?: Record<string, string | number | null>;
 }
 
 export interface TrustDecision {
@@ -96,6 +102,14 @@ export interface SegmentEstimate {
   range: [number, number] | null;
   /** Max movement of the weighted median when any single contributor is removed. */
   looSwing: number | null;
+  /** Median absolute deviation of contributing rents — robust spread at small n. */
+  mad: number | null;
+  /** Seeded-bootstrap percentile band for the weighted median. Sample
+   * dispersion, NOT forecast error — calibration against signed rents is a
+   * roadmap item, at which point this becomes an FSD-style calibrated band. */
+  band: [number, number] | null;
+  /** range max / range min — guardrail ported from prior production comps work. */
+  spreadRatio: number | null;
   distinctSources: number;
   medianAgeDays: number | null;
   confidence: Confidence;
@@ -157,7 +171,22 @@ export interface PipelineConfig {
     mediumMinN: number;
     mediumMaxLooSwing: number;
     lowMinN: number;
+    /** Confidence caps at LOW when range max/min exceeds this. */
+    spreadRatioCap: number;
   };
+  bootstrap: {
+    /** Fixed seed keeps the pipeline deterministic. */
+    seed: number;
+    iterations: number;
+    lowerPct: number;
+    upperPct: number;
+    /** Below this many contributing rows the band is withheld — resampling a
+     * handful of values fakes precision exactly when honesty matters most. */
+    minN: number;
+  };
+  /** Dead listings that vanished within this many live days are surfaced as
+   * weak clearing-price evidence (display only; never enters the estimate). */
+  fastDelistMaxWindowDays: number;
   subject: {
     society: string;
     areaSqft: number;
@@ -195,7 +224,10 @@ export const DEFAULT_CONFIG: PipelineConfig = {
     mediumMinN: 4,
     mediumMaxLooSwing: 2500,
     lowMinN: 2,
+    spreadRatioCap: 2,
   },
+  bootstrap: { seed: 20260818, iterations: 1000, lowerPct: 10, upperPct: 90, minN: 5 },
+  fastDelistMaxWindowDays: 21,
   subject: {
     society: 'Lakeview Residences',
     areaSqft: 1175,

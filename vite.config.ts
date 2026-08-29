@@ -7,5 +7,7 @@ export default defineConfig({
   resolve: {
     alias: { '@pipeline': new URL('./pipeline/src', import.meta.url).pathname },
   },
+  // Honor a port assigned by the environment (e.g. preview tooling).
+  server: process.env.PORT ? { port: Number(process.env.PORT), strictPort: true } : undefined,
   build: { outDir: '../dist', emptyOutDir: true },
 });

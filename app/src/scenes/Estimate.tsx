@@ -106,10 +106,17 @@ export default function Estimate() {
 
       <div className="benchmark-big">{t1.weightedMedian !== null ? inr(t1.weightedMedian) : '—'}</div>
       <p className="benchmark-meta">
-        the Tier-1 ask benchmark — trust-weighted median of{' '}
-        {t1.range ? `${inr(t1.range[0])}–${inr(t1.range[1])}` : '—'} · confidence{' '}
+        {t1.band ? (
+          <>
+            the Tier-1 ask benchmark, banded <b>{inr(t1.band[0])}–{inr(t1.band[1])}</b>{' '}
+            (seeded bootstrap, 10th–90th) — sample dispersion, not forecast error; it becomes a
+            calibrated FSD-style band once signed rents accumulate.{' '}
+          </>
+        ) : null}
+        Full range {t1.range ? `${inr(t1.range[0])}–${inr(t1.range[1])}` : '—'} · MAD{' '}
+        {t1.mad !== null ? inr(t1.mad) : '—'} · confidence{' '}
         <b style={{ color: 'var(--pine-deep)' }}>{t1.confidence.toUpperCase()}</b>, earned on all
-        four criteria:
+        criteria:
       </p>
       <ul className="criteria">
         {criteria.map(c => (
@@ -124,6 +131,53 @@ export default function Estimate() {
         {t2.distinctSources} platforms. Aspirational asks that sat unrented for months carry half
         weight, as ceiling evidence.
       </p>
+
+      <DelistingAside />
     </section>
+  );
+}
+
+/** Every listing is an ask, never a close — except, almost, these. A dead
+ * listing that vanished fast probably rented near its ask: the closest thing
+ * to transaction evidence this dataset holds. Display only; too thin and too
+ * ambiguous (expiry? repost?) to enter the math. */
+function DelistingAside() {
+  const { result } = usePipeline();
+  const { config } = result;
+  const fast = result.listings.filter(
+    l =>
+      l.bhk === 2 &&
+      l.daysDark > config.staleExcludeAfterDays &&
+      l.liveWindowDays >= 0 &&
+      l.liveWindowDays <= config.fastDelistMaxWindowDays &&
+      !result.trust[l.listingId]!.reasons.some(
+        r => r.effect === 'quarantine' || r.code === 'duplicate-copy', // one row per unit, here too
+      ),
+  );
+  return (
+    <div className="card" style={{ marginTop: 40, borderStyle: 'dashed' }}>
+      <p className="eyebrow" style={{ marginBottom: 10 }}>
+        An original signal we surface but refuse to score: delisting speed
+      </p>
+      <p style={{ fontSize: 15, maxWidth: 720 }}>
+        Every listing is an ask, never a close. But a listing that vanished within{' '}
+        {config.fastDelistMaxWindowDays} days probably rented — delisting speed at a price is the
+        closest thing to transaction evidence in this dataset. The {fast.length} candidates:
+      </p>
+      <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
+        {fast.map(l => (
+          <li key={l.listingId} className="mono" style={{ fontSize: 13.5 }}>
+            {l.listingId} · {l.society} · {l.furnishingNorm} · asked {inr(l.rent)} · gone after{' '}
+            {l.liveWindowDays}d
+          </li>
+        ))}
+      </ul>
+      <p style={{ fontSize: 13.5, color: 'var(--ink-70)', marginTop: 12, maxWidth: 720 }}>
+        Why it stays out of the math: a fast delist can also be an expiry or a repost, and{' '}
+        {fast.length} mixed rows can't carry weight honestly. At production scale this becomes a
+        survival model on listing lifetimes — the first honest bridge from asks to achievable
+        rents.
+      </p>
+    </div>
   );
 }

@@ -18,6 +18,9 @@ export default function Assumptions() {
     { key: 'minIndependentBridgesToMerge', value: `${c.minIndependentBridgesToMerge}`, why: 'independent cross-posted units needed before two spellings merge' },
     { key: 'rentPerSfBounds', value: `₹${c.rentPerSfBounds[0]}–₹${c.rentPerSfBounds[1]}/sf`, why: 'outside this band, a value error is likelier than a bargain' },
     { key: 'bhkAreaBoundsSf', value: Object.entries(c.bhkAreaBoundsSf).map(([b, [lo, hi]]) => `${b}BHK ${lo}–${hi}`).join(' · '), why: 'BHK and area must be able to both be true' },
+    { key: 'ladder.spreadRatioCap', value: `× ${c.ladder.spreadRatioCap}`, why: 'a comp set disagreeing by more than 2× caps at LOW — ported from prior production comps validation (3× on sale prices, tightened for rentals)' },
+    { key: 'bootstrap', value: `seed ${c.bootstrap.seed} · ${c.bootstrap.iterations} draws · P${c.bootstrap.lowerPct}–P${c.bootstrap.upperPct} · min n=${c.bootstrap.minN}`, why: 'deterministic dispersion band for the median; withheld below 5 rows because a tiny-sample band fakes precision' },
+    { key: 'fastDelistMaxWindowDays', value: `${c.fastDelistMaxWindowDays} d`, why: 'dead listings that vanished this fast are shown as weak clearing evidence — display only, never in the math' },
   ];
   const ladder = [
     { key: 'high', value: `effN ≥ ${c.ladder.highMinN} ∧ sources ≥ ${c.ladder.highMinSources} ∧ swing < ₹${c.ladder.highMaxLooSwing.toLocaleString('en-IN')} ∧ age < ${c.ladder.highMaxMedianAgeDays}d` },
