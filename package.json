@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "golden": "GOLDEN=1 vitest run pipeline/test/pipeline.test.ts"
+    "golden": "GOLDEN=1 vitest run pipeline/test/pipeline.test.ts",
+    "audit": "node scripts/audit.mjs"
   },
   "type": "module",
   "devDependencies": {

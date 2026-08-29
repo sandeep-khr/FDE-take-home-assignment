@@ -79,3 +79,12 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   junk/dup vs 22% owner). Candidate's call: no map in the proof of work; the
   idea is banked as a production execution-plan item (geo trust telemetry once
   real coordinates exist) and a scope-cut line in the approach note.
+
+## 2026-08-30 (verification session)
+
+- Candidate asked for the complete audit trail — every algorithm and
+  assumption, verifiable from scratch. Claude added `npm run audit` (prints
+  the full per-row reasoning trace from the golden run) and wrote a private
+  audit-trail document with a numbered assumption register (packet facts vs
+  ratified rules vs conventions), hand-verification recipes, and a
+  challenge-first list. Verification and any rule changes are the candidate's.
