@@ -1,0 +1,103 @@
+# Day-1 findings — what's actually inside listings.csv
+
+Working notes from the exploration scripts (`explore_listings.py`, `explore_followup.py`).
+All numbers are reproducible; snapshot date is 2026-08-18. These notes feed the approach
+note but are not submission prose.
+
+## The planted traps, by ID
+
+| Listing | What's wrong | Proposed handling |
+|---|---|---|
+| CP-0082 | ₹12,000 rent for a 1,100 sf 2BHK (₹10.9/sf, deposit ₹50k) | Quarantine: impossible value — data error or bait |
+| CP-0083 | ₹185,000 rent, ₹157/sf, deposit ₹6L | Quarantine: error or non-comparable luxury outlier |
+| CP-0085 | "1BHK" at 2,100 sf; also last seen 106 days ago | Quarantine: attribute mislabel + dead listing |
+| CP-0084 | `last_seen` (Aug 11) **before** `posted` (Aug 16); 0 photos | Quarantine: provenance inconsistency — dates can't both be true |
+| CP-0081 | 3BHK label, but 1,175 sf + ₹2.8L deposit + ₹58k ask + posted Aug 14 = **the subject deal itself**, cross-posted by a broker with the wrong BHK | Quarantine: self-match — circular evidence (the deal must not benchmark against its own listing) |
+
+CP-0081 is the deepest trap: Market-ops flagged "a 3BHK that looks like this 2BHK
+copied with the wrong label," but it isn't just mislabeled — it matches the subject's
+area, deposit and timing exactly. Including it would let the landlord's own ask
+validate itself.
+
+## Duplicates (cross-posts)
+
+- **14 strict clone pairs** (same society family, posted/last-seen within 3 days,
+  area within 25 sf, deposit exact or rent within 2%). Mostly the CP-0069..0080
+  block cloning earlier rows across platforms, sometimes at rents ₹500–₹4,000 apart
+  — broker markup visible inside clusters.
+- **The near-miss that proves the review queue**: CP-0026 (Lakeview, ₹58.5k, dep
+  ₹175.5k) vs CP-0053 (Bluewater Heights, ₹58k, dep ₹348k), same week, similar area.
+  Rent+area+dates say "same home"; deposits and society say otherwise. Different
+  homes that rhyme. Auto-drop would have destroyed a real comp → cross-society
+  near-clones only ever go to the human suspect queue.
+- **Lesson learned in our own first pass**: a loose transitive-closure dedup
+  (area ±30 sf or blank, rent ±6%, any window overlap) chained 31 Lakeview rows
+  into ONE cluster and shrank Tier 1 to N=2 — over-cleaning manufactures scarcity
+  and would have produced a false "insufficient evidence." Both failure directions
+  are real and both need guarding.
+
+## Society aliasing — merge only on evidence
+
+Every society has spelling variants. Clone pairs that *bridge* two spellings prove
+co-reference:
+
+- `Lakeview Res. / Lake View Residency / Lakeview Residences / … Phase 1` —
+  bridged by ≥3 independent clone units → **auto-merge** (44 of 86 rows).
+- `Fern Grove ↔ Fern Grove Residency` — bridged by exactly one unit (posted 3×) →
+  **suspected same**, human confirms.
+- `FernGrove Apartments` — never bridged, and its units are 930–1,005 sf vs
+  1,105–1,255 sf → stays **distinct**. Same for `Bluewater Height(s)/Blue Water Hts`.
+
+Localities: Lakeview rows appear only under `Harlur-Sarjapur Road / Haralur /
+Harlur Road` (one pocket, three spellings). `Kasavanahalli` (14) and `Sarjapur
+Road` (3) belong to other societies — the "wider pocket" from the demand thread.
+
+## Staleness and aspiration
+
+- Freshness: 69/86 seen within 14 days of snapshot; 6 in a 15–30-day gray zone;
+  11 dark for 31–106 days (the dead tail includes both CP-0044/0077 clones, both
+  CP-0050/0078 clones, CP-0003, CP-0049, CP-0085).
+- **Aspirational asks**: 5 of the 19 Tier-1 survivors have been continuously listed
+  for >60 days (CP-0030: 117 days at ₹63k). A listing the market has refused for
+  months is evidence of a ceiling, not of clearing rent.
+- 25 rows have deposit = exactly 3.0× rent (platform/broker template smell) —
+  observation only, too weak to act on alone.
+- Furnishing strings need normalization too: one row says `semi furnished`
+  (no hyphen).
+
+## The numbers that matter (candidate rules: quarantine 5, stale >21d out, strict dedup)
+
+| Step | N | Median ask | Range |
+|---|---|---|---|
+| Raw pull | 86 | ₹59,000 | ₹12,000–₹185,000 |
+| 2BHK, minus quarantine | 82 | ₹59,000 | ₹45,500–₹72,000 |
+| Fresh (≤21d) | 71 | ₹58,500 | — |
+| After dedup | 60 | ₹58,000 | — |
+| Lakeview family (bridged) | 29 | ₹59,500 | ₹51,000–₹72,000 |
+| **Tier 1: + semi-furnished** | **19** | **₹59,500** | **₹55,500–₹63,000** |
+| Tier 2: micromarket semi-furnished | 37 | ₹59,000 | ₹54,000–₹65,000 |
+
+- Tier-1 median is rock-stable: leave-one-out swing ₹0; unchanged across staleness
+  cutoffs 14/21/30. High confidence is *earned* here.
+- **The honest headline: the raw median (₹59,000) was nearly right — by accident.**
+  The junk was symmetric this time (₹12k error vs ₹185k error cancel; furnishing mix
+  averages out). What cleaning actually buys: (1) you *know* the number instead of
+  hoping; (2) honest effective N (86 → 19 relevant); (3) a usable range
+  (₹55.5–63k vs the raw ₹12k–185k); (4) protection for the next deal, where the
+  junk won't be symmetric.
+- **Verdict vs the deal**: landlord asks ₹56k base + ₹5k maintenance = ₹61k all-in.
+  Listings don't reliably state whether maintenance is included (Market-ops
+  confirmed). If comp asks are all-in → the ask is ~+2.5% above market median; if
+  they're base rents → it's ~6% below. **The maintenance ambiguity flips the sign
+  of the deviation** — the single most valuable data fix, and the verdict must show
+  both readings rather than pick one silently.
+
+## Failure case (for the proof of work)
+
+"Fully-furnished Lakeview 2BHK" — the segment the ₹72k tenant-revenue hypothesis
+would love to lean on: 7 raw rows → after quarantine (CP-0083), staleness (CP-0003)
+and dedup (CP-0072) → **4 survivors (₹67k/₹68k/₹68.5k/₹72k)**, of which one has a
+6×-rent deposit and a 66-day unfilled window, one was posted the day before
+snapshot (1-day live window), one has zero photos. Honest output: LOW/INSUFFICIENT
+— with a collect-next list. Secondary demo: "3BHK benchmark" → the only 3BHK row is
+the quarantined subject self-match → N=0.
