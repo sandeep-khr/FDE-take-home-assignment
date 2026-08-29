@@ -7,6 +7,7 @@ export default function VerdictPanel() {
   const { result } = usePipeline();
   const { subject } = result.config;
   const t1 = result.segments.find(s => s.segmentId === 'tier1')!;
+  const furnished = result.segments.find(s => s.segmentId === 'furnished-lakeview')!;
   const readings = result.verdict.readings;
 
   return (
@@ -55,7 +56,30 @@ export default function VerdictPanel() {
           <p key={a}>* {a}</p>
         ))}
       </div>
-      <p style={{ marginTop: 18 }}>
+      <div className="card" style={{ marginTop: 22, borderColor: 'color-mix(in srgb, var(--pine) 35%, transparent)' }}>
+        <p className="eyebrow" style={{ marginBottom: 10 }}>What Supply can act on today</p>
+        <ul className="collect">
+          <li>
+            Anchor the negotiation on evidence: the credible comp ask band is{' '}
+            <b>
+              {t1.range ? `${inr(t1.range[0])}–${inr(t1.range[1])}` : '—'}, centre{' '}
+              {inr(t1.weightedMedian ?? 0)}
+            </b>
+            . The landlord&rsquo;s {inr(subject.baseRent + subject.maintenance)} all-in ask has no
+            comp above it in tier 1 except refused, long-lived asks.
+          </li>
+          <li>
+            Before signing anything, make the two calls that resolve the sign flip: confirm with
+            the freshest surviving comps whether their rents include maintenance.
+          </li>
+          <li>
+            Do not price rooms off the furnished segment yet — it is{' '}
+            {furnished.confidence.toUpperCase()} confidence on {furnished.n} weak rows — collect
+            the listed evidence first.
+          </li>
+        </ul>
+      </div>
+      <p style={{ marginTop: 14 }}>
         <span className="chip" style={{ background: 'var(--pine-tint)', borderColor: 'color-mix(in srgb, var(--pine) 30%, transparent)', color: 'var(--pine-deep)' }}>
           Top data fix: capture maintenance-inclusion per listing at scrape time
         </span>
