@@ -58,3 +58,13 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   examples, and an approach-note skeleton (structure, beats, voice rules).
   Agreement unchanged: the candidate writes all submission prose; Claude
   critiques and fact-checks.
+
+## 2026-08-30 (v2 redesign)
+
+- Candidate rejected the v1 UI ("not easy to read; ticker and navbar-like rail")
+  — correct critique. Claude rebuilt the app as a data-driven editorial essay:
+  killed the ticker and the sticky rail (only fixed element now is a 3px
+  reading-progress line), introduced the "census of 86" signature (every
+  listing a physical cell, judged as the story progresses), oversized chapter
+  numerals, tables demoted behind progressive disclosure, one inversion moment
+  (the refusal chapter on deep pine). Tests unchanged and green throughout.

@@ -29,24 +29,45 @@ export default function RawPull() {
           </>
         }
       />
-      <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' }}>
-        {sources.map(s => (
-          <button
-            key={s}
-            className="chip"
-            onClick={() => setSource(s)}
-            style={
-              s === source
-                ? { background: 'var(--ink)', color: 'var(--paper)', borderColor: 'var(--ink)' }
-                : undefined
-            }
-          >
-            {s === 'all' ? `All ${result.listings.length}` : s}
-          </button>
-        ))}
+      <div className="stat-row">
+        <div className="stat">
+          <b>{result.listings.length}</b>
+          <span>rows from 4 platforms</span>
+        </div>
+        <div className="stat">
+          <b>{spellings}</b>
+          <span>spellings for 6 societies</span>
+        </div>
+        <div className="stat">
+          <b>₹12k–₹1.85L</b>
+          <span>the "2BHK rent" range, before judgment</span>
+        </div>
       </div>
-      <div className="ledger-wrap" style={{ maxHeight: 520, overflowY: 'auto' }}>
-        <table className="ledger">
+      <details className="ledger-fold">
+        <summary>
+          Open the raw ledger
+          <span className="hint">
+            all {rows.length} rows, exactly as scraped — filter by platform inside
+          </span>
+        </summary>
+        <div style={{ display: 'flex', gap: 8, padding: '14px 26px 4px', flexWrap: 'wrap' }}>
+          {sources.map(s => (
+            <button
+              key={s}
+              className="chip"
+              onClick={() => setSource(s)}
+              style={
+                s === source
+                  ? { background: 'var(--ink)', color: 'var(--paper)', borderColor: 'var(--ink)' }
+                  : undefined
+              }
+            >
+              {s === 'all' ? `All ${result.listings.length}` : s}
+            </button>
+          ))}
+        </div>
+        <div className="ledger-scroll">
+          <table className="ledger">
           <thead>
             <tr>
               <th>id</th>
@@ -83,8 +104,9 @@ export default function RawPull() {
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
+          </table>
+        </div>
+      </details>
     </section>
   );
 }

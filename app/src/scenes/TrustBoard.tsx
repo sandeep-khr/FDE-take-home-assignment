@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DotGrid from '../components/DotGrid';
 import GradeChip from '../components/GradeChip';
 import ReasonTag from '../components/ReasonTag';
 import SectionHeader from '../components/SectionHeader';
@@ -47,29 +48,32 @@ export default function TrustBoard() {
         }
       />
 
-      <h3 style={{ fontFamily: 'var(--serif)', fontSize: 24, fontWeight: 400, margin: '0 0 14px' }}>
+      <div style={{ margin: '10px 0 50px' }}>
+        <DotGrid mode="graded" />
+      </div>
+
+      <h3 style={{ fontFamily: 'var(--serif)', fontSize: 30, fontWeight: 400, margin: '0 0 18px', textWrap: 'balance' }}>
         The quarantine, first — five rows whose values cannot all be true
       </h3>
-      <div className="card-grid" style={{ marginBottom: 40 }}>
+      <div className="card-grid" style={{ marginBottom: 44 }}>
         {quarantined.map(l => {
           const t = result.trust[l.listingId]!;
           const story = t.reasons.find(r => r.effect === 'quarantine')!;
           return (
-            <div key={l.listingId} className="card" style={{ borderColor: 'color-mix(in srgb, var(--brick) 35%, transparent)' }}>
+            <div key={l.listingId} className="card case-file">
               <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'baseline' }}>
-                <span className="mono" style={{ fontWeight: 600 }}>{l.listingId}</span>
+                <span className="mono-id">{l.listingId}</span>
                 <GradeChip grade="D" compact />
               </div>
-              <p style={{ fontSize: 13.5, margin: '10px 0 8px', color: 'var(--ink-60)' }}>
+              <p className="facts">
                 {l.society} · {l.bhk}BHK · {l.areaSqft ?? '—'}sf · {inr(l.rent)}
                 {l.deposit ? <> · dep {inr(l.deposit)}</> : null}
               </p>
-              <p style={{ fontSize: 14 }}>{story.label}</p>
+              <p className="story">{story.label}</p>
               {l.listingId === 'CP-0081' && (
-                <p style={{ fontSize: 13, marginTop: 8, color: '#7e241c', fontWeight: 600 }}>
-                  This is the deepest trap in the pull: the subject deal itself, cross-posted by a
-                  broker with the wrong BHK. Count it, and the landlord&rsquo;s ask validates
-                  itself.
+                <p style={{ fontSize: 13.5, marginTop: 10, color: '#7e241c', fontWeight: 600 }}>
+                  The deepest trap in the pull: the subject deal itself, cross-posted by a broker
+                  with the wrong BHK. Count it, and the landlord&rsquo;s ask validates itself.
                 </p>
               )}
             </div>
@@ -77,8 +81,13 @@ export default function TrustBoard() {
         })}
       </div>
 
-      <div className="ledger-wrap" style={{ maxHeight: 560, overflowY: 'auto' }}>
-        <table className="ledger">
+      <details className="ledger-fold" open>
+        <summary>
+          Open the graded ledger — and disagree with it
+          <span className="hint">every grade, weight and reason · ✕ / ↺ re-run the math with your call</span>
+        </summary>
+        <div className="ledger-scroll">
+          <table className="ledger">
           <thead>
             <tr>
               <th>id</th>
@@ -154,8 +163,9 @@ export default function TrustBoard() {
               );
             })}
           </tbody>
-        </table>
-      </div>
+          </table>
+        </div>
+      </details>
     </section>
   );
 }

@@ -33,15 +33,15 @@ export default function VerdictPanel() {
       <div className="readings">
         {readings.map(r => (
           <div key={r.assumption} className={`reading reading--${r.direction}`}>
-            <p className="eyebrow" style={{ marginBottom: 4 }}>
+            <p className="assumption">
               {r.assumption === 'listings-all-in'
                 ? 'If listing rents are all-in'
                 : 'If listing rents are base rents'}
             </p>
             <b className="big">{pct(r.deviationPct)}</b>
-            <p style={{ fontSize: 14, color: 'var(--ink-60)' }}>
-              compare {inr(r.comparedAsk)} to the {inr(t1.weightedMedian ?? 0)} benchmark — the ask
-              is <b>{r.direction}</b> market
+            <p>
+              {inr(r.comparedAsk)} against the {inr(t1.weightedMedian ?? 0)} benchmark — the ask is{' '}
+              <span className="direction">{r.direction}</span> market
             </p>
             <p style={{ fontSize: 13.5, marginTop: 10 }}>
               {r.assumption === 'listings-all-in'

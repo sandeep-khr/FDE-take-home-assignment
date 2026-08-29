@@ -104,39 +104,26 @@ export default function Estimate() {
         })}
       </div>
 
-      <div className="readings" style={{ marginTop: 30 }}>
-        <div className="reading">
-          <p className="eyebrow" style={{ marginBottom: 6 }}>Tier 1 benchmark · earned, not asserted</p>
-          <b className="big" style={{ color: 'var(--pine-deep)' }}>
-            {t1.weightedMedian !== null ? inr(t1.weightedMedian) : '—'}
-          </b>
-          <p style={{ fontSize: 13.5, color: 'var(--ink-60)' }}>
-            trust-weighted median · range {t1.range ? `${inr(t1.range[0])}–${inr(t1.range[1])}` : '—'} ·
-            confidence <b style={{ color: 'var(--pine-deep)' }}>{t1.confidence.toUpperCase()}</b>
-          </p>
-          <ul className="collect" style={{ marginTop: 14 }}>
-            {criteria.map(c => (
-              <li key={c.text} style={{ color: c.ok ? 'inherit' : 'var(--brick)' }}>{c.text}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="reading">
-          <p className="eyebrow" style={{ marginBottom: 6 }}>Two sanity checks beside it</p>
-          <p style={{ fontSize: 14.5 }}>
-            <b>Remove any single comp and the median moves {inr(t1.looSwing ?? 0)}.</b> The brief
-            worried that one bad listing can move an estimate by thousands — on this cleaned set,
-            it cannot.
-          </p>
-          <p style={{ fontSize: 14.5, marginTop: 12 }}>
-            The wider micromarket corroborates rather than contradicts:{' '}
-            <b>
-              {t2.unweightedMedian !== null ? inr(t2.unweightedMedian) : '—'} across {t2.n} units
-            </b>{' '}
-            in {t2.distinctSources} sources — within ₹1,000 of tier 1. Aspirational asks that sat
-            unrented for months carry half weight, as ceiling evidence.
-          </p>
-        </div>
-      </div>
+      <div className="benchmark-big">{t1.weightedMedian !== null ? inr(t1.weightedMedian) : '—'}</div>
+      <p className="benchmark-meta">
+        the Tier-1 ask benchmark — trust-weighted median of{' '}
+        {t1.range ? `${inr(t1.range[0])}–${inr(t1.range[1])}` : '—'} · confidence{' '}
+        <b style={{ color: 'var(--pine-deep)' }}>{t1.confidence.toUpperCase()}</b>, earned on all
+        four criteria:
+      </p>
+      <ul className="criteria">
+        {criteria.map(c => (
+          <li key={c.text} style={{ color: c.ok ? 'inherit' : 'var(--brick)' }}>{c.text}</li>
+        ))}
+      </ul>
+      <p className="benchmark-meta" style={{ marginTop: 26 }}>
+        <b>Remove any single comp and the median moves {inr(t1.looSwing ?? 0)}</b> — the brief
+        worried one bad listing can move an estimate by thousands; on this cleaned set, it cannot.
+        And the wider micromarket corroborates rather than contradicts:{' '}
+        {t2.unweightedMedian !== null ? inr(t2.unweightedMedian) : '—'} across {t2.n} units on{' '}
+        {t2.distinctSources} platforms. Aspirational asks that sat unrented for months carry half
+        weight, as ceiling evidence.
+      </p>
     </section>
   );
 }
