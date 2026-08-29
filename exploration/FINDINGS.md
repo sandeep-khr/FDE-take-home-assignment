@@ -101,3 +101,19 @@ and dedup (CP-0072) → **4 survivors (₹67k/₹68k/₹68.5k/₹72k)**, of whic
 snapshot (1-day live window), one has zero photos. Honest output: LOW/INSUFFICIENT
 — with a collect-next list. Secondary demo: "3BHK benchmark" → the only 3BHK row is
 the quarantined subject self-match → N=0.
+
+## Web-verified external context (framing only — NOT case evidence)
+
+- **Maintenance is a separate, inconsistently captured charge** on Indian rental
+  platforms (NoBroker cites Bangalore maintenance ranging ₹300–₹6,559/month,
+  distinct from rent). Confirms the sign-flip risk when comparing the ₹61k all-in
+  ask to listing rents. Source: nobroker.in property-management pages.
+- **Deposit norms:** Bangalore's historical residential deposit norm was 5–10
+  months' rent; the Karnataka Rent (Amendment) Act 2025 — reported in force
+  Jan 2026 — caps residential deposits at 2 months. Two implications, both
+  labeled: (1) high listing deposit multiples are normal history, not junk
+  signals → deposit stays a weak signal; (2) the subject deal's ₹2.8L = 5-month
+  deposit ask sits above Flent's own >3-month threshold *and* the reported legal
+  cap → negotiation leverage, flagged "verify with legal," never asserted as law.
+  Sources: goodreturns.in, nestriqo.com, propnewz.com, proptechsolutions.in
+  (secondary/SEO-grade — hence the legal-review caveat).

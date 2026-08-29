@@ -82,10 +82,41 @@ proof should read as "this person already works here," not a portfolio piece.
 - Scraping, storage, auth, persistence, ML price models, production thresholds,
   solving Problems 2–3 (beyond the calibration hook in the execution plan).
 
-## Open decisions — to ratify from Day-1 exploration
+## Ratified ruleset (2026-08-30, from Day-1 exploration + candidate approval)
 
-Staleness cutoff · dedup match tolerances + representative rule · bait/aspirational
-bounds · confidence ladder definitions · failure-case segment choice.
+1. **Quarantine (grade D, reasons shown, never deleted):** CP-0082 impossible value ·
+   CP-0083 error/luxury outlier · CP-0085 attribute mislabel + dead · CP-0084
+   provenance inconsistency (last_seen < posted) · CP-0081 subject self-match
+   (circular evidence).
+2. **Staleness:** dark >30d excluded · 15–30d grade B (downweight ×0.5) · ≤14d full
+   weight. Snapshot = 2026-08-18.
+3. **Duplicate auto-merge:** same bridged society family + posted/last-seen within
+   3d + area ≤25sf + (deposit exact OR rent ≤2%). Representative: owner-posted,
+   else freshest. Intra-cluster rent spread displayed. Cross-society near-clones →
+   human suspect queue only (CP-0026/0053 precedent).
+4. **Alias policy:** ≥2 independent clone-bridges ⇒ auto-merge names (Lakeview
+   family incl. Phase 1) · exactly 1 ⇒ suspected-same, human confirms (Fern Grove ↔
+   Fern Grove Residency) · 0 ⇒ distinct (FernGrove Apartments; Bluewater variants).
+5. **Aspirational downweight:** live window >60d and still listed ⇒ weight ×0.5,
+   labeled ceiling evidence (5 of 19 Tier-1 rows).
+6. **Deposit signal: weak/contextual only.** Bangalore's historic norm is 5–10
+   months (web-verified context), so high multiples are not junk markers; exact
+   3.0× template pattern logged as observation only.
+7. **Confidence ladder:** High = N≥8 ∧ ≥3 sources ∧ LOO swing <₹1k ∧ median age
+   <45d · Medium = N 4–7 ∨ swing <₹2.5k · Low = N 2–3 ∨ single-source dominance ·
+   Insufficient = N≤1 ∨ swing ≥₹2.5k. Verdict always quotes median + range.
+8. **Verdict framing:** benchmark vs ask shown under both maintenance readings
+   (listings all-in vs base) — the ambiguity flips the sign (+2.5% vs −6%) and is
+   named the top data fix; ask-vs-achieved asterisk always present.
+9. **Failure-case demo:** fully-furnished Lakeview segment (4 weak survivors) ⇒
+   LOW/INSUFFICIENT + collect-next list; secondary: 3BHK ask ⇒ N=0 after
+   quarantine.
+
+External context verified on the open web (framing only, never case evidence):
+maintenance is conventionally a separate, inconsistently captured charge on Indian
+rental platforms; Karnataka's 2025/26 rent-amendment reportedly caps residential
+deposits at 2 months (in force Jan 2026) — the deal's 5-month ask is flagged for
+legal review as negotiation leverage, labeled "reported, verify," never asserted.
 
 ## Risks
 
