@@ -24,3 +24,18 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   threshold and rule (staleness cutoff, dedup criteria, alias policy, aspirational
   downweighting, confidence ladder, quarantine list, failure-case choice) —
   pending.
+
+## 2026-08-30 (build session, Tasks 1–7)
+
+- Claude wrote the TypeScript pipeline test-first against ground-truth numbers
+  from the exploration; candidate's ratified ruleset is the normative spec.
+- Two fixture corrections surfaced DURING build (both favoring the ratified
+  rules over the exploration preview): CP-0026 stays contributing (cross-society
+  near-clone → suspect queue, not duplicate) and CP-0015 stays at half weight
+  (gray, not dead) → Tier 1 N=21, median unchanged ₹59,500. Verified
+  independently in Python before fixing any test.
+- One design amendment made by Claude pending candidate sign-off: confidence
+  ladder now runs on effective N (Σ trust weights) with AND-ed criteria — the
+  ratified OR-form would have graded the 4-row furnished segment "medium" on
+  stability alone.
+- Golden-run fixture generated and eyeballed against FINDINGS before commit.

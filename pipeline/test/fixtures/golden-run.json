@@ -1,0 +1,3720 @@
+{
+  "config": {
+    "snapshotDate": "2026-08-18",
+    "staleExcludeAfterDays": 30,
+    "staleGrayAfterDays": 14,
+    "cloneDateSlackDays": 3,
+    "cloneAreaSlackSf": 25,
+    "cloneRentTolerance": 0.02,
+    "aspirationalMinWindowDays": 60,
+    "aspirationalMaxDaysDark": 14,
+    "minIndependentBridgesToMerge": 2,
+    "rentPerSfBounds": [
+      25,
+      90
+    ],
+    "bhkAreaBoundsSf": {
+      "1": [
+        350,
+        900
+      ],
+      "2": [
+        650,
+        1500
+      ],
+      "3": [
+        900,
+        2200
+      ]
+    },
+    "grayWeight": 0.5,
+    "aspirationalWeight": 0.5,
+    "ladder": {
+      "highMinN": 8,
+      "highMinSources": 3,
+      "highMaxLooSwing": 1000,
+      "highMaxMedianAgeDays": 45,
+      "mediumMinN": 4,
+      "mediumMaxLooSwing": 2500,
+      "lowMinN": 2
+    },
+    "subject": {
+      "society": "Lakeview Residences",
+      "areaSqft": 1175,
+      "deposit": 280000,
+      "baseRent": 56000,
+      "maintenance": 5000,
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "postedWithinDays": 7
+    }
+  },
+  "listings": [
+    {
+      "listingId": "CP-0001",
+      "source": "CommonFloor",
+      "postedDate": "2026-06-21",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lakeview Res.",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1050,
+      "rent": 60000,
+      "deposit": 300000,
+      "photoCount": 7,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 52,
+      "rentPerSf": 57.142857142857146
+    },
+    {
+      "listingId": "CP-0002",
+      "source": "CommonFloor",
+      "postedDate": "2026-05-20",
+      "lastSeenDate": "2026-08-15",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1050,
+      "rent": 55500,
+      "deposit": 166500,
+      "photoCount": 14,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 87,
+      "rentPerSf": 52.857142857142854
+    },
+    {
+      "listingId": "CP-0003",
+      "source": "CommonFloor",
+      "postedDate": "2026-05-24",
+      "lastSeenDate": "2026-06-02",
+      "society": "Lakeview Residences",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1300,
+      "rent": 69500,
+      "deposit": 208500,
+      "photoCount": 7,
+      "posterType": "unknown",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 77,
+      "liveWindowDays": 9,
+      "rentPerSf": 53.46153846153846
+    },
+    {
+      "listingId": "CP-0004",
+      "source": "CommonFloor",
+      "postedDate": "2026-08-13",
+      "lastSeenDate": "2026-08-15",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1375,
+      "rent": 62500,
+      "deposit": null,
+      "photoCount": 6,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 2,
+      "rentPerSf": 45.45454545454545
+    },
+    {
+      "listingId": "CP-0005",
+      "source": "Housing",
+      "postedDate": "2026-08-15",
+      "lastSeenDate": "2026-08-16",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1000,
+      "rent": 68000,
+      "deposit": 204000,
+      "photoCount": 12,
+      "posterType": "owner",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 2,
+      "liveWindowDays": 1,
+      "rentPerSf": 68
+    },
+    {
+      "listingId": "CP-0006",
+      "source": "CommonFloor",
+      "postedDate": "2026-07-03",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lake View Residency",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1375,
+      "rent": 54500,
+      "deposit": 163500,
+      "photoCount": 7,
+      "posterType": "unknown",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 40,
+      "rentPerSf": 39.63636363636363
+    },
+    {
+      "listingId": "CP-0007",
+      "source": "CommonFloor",
+      "postedDate": "2026-07-14",
+      "lastSeenDate": "2026-08-01",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1200,
+      "rent": 54500,
+      "deposit": 218000,
+      "photoCount": 10,
+      "posterType": "broker",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 17,
+      "liveWindowDays": 18,
+      "rentPerSf": 45.416666666666664
+    },
+    {
+      "listingId": "CP-0008",
+      "source": "NoBroker",
+      "postedDate": "2026-05-17",
+      "lastSeenDate": "2026-08-08",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1100,
+      "rent": 58000,
+      "deposit": 348000,
+      "photoCount": 7,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 10,
+      "liveWindowDays": 83,
+      "rentPerSf": 52.72727272727273
+    },
+    {
+      "listingId": "CP-0009",
+      "source": "MagicBricks",
+      "postedDate": "2026-06-29",
+      "lastSeenDate": "2026-08-03",
+      "society": "Lakeview Res.",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 975,
+      "rent": 59500,
+      "deposit": 357000,
+      "photoCount": 7,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 15,
+      "liveWindowDays": 35,
+      "rentPerSf": 61.02564102564103
+    },
+    {
+      "listingId": "CP-0010",
+      "source": "NoBroker",
+      "postedDate": "2026-05-04",
+      "lastSeenDate": "2026-08-06",
+      "society": "Lake View Residency",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1200,
+      "rent": 58500,
+      "deposit": 292500,
+      "photoCount": 2,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 12,
+      "liveWindowDays": 94,
+      "rentPerSf": 48.75
+    },
+    {
+      "listingId": "CP-0011",
+      "source": "NoBroker",
+      "postedDate": "2026-07-21",
+      "lastSeenDate": "2026-08-15",
+      "society": "Lakeview Res.",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1125,
+      "rent": 60500,
+      "deposit": 181500,
+      "photoCount": 9,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 25,
+      "rentPerSf": 53.77777777777778
+    },
+    {
+      "listingId": "CP-0012",
+      "source": "MagicBricks",
+      "postedDate": "2026-07-02",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1350,
+      "rent": 68500,
+      "deposit": 274000,
+      "photoCount": 7,
+      "posterType": "unknown",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 6,
+      "liveWindowDays": 41,
+      "rentPerSf": 50.74074074074074
+    },
+    {
+      "listingId": "CP-0013",
+      "source": "Housing",
+      "postedDate": "2026-07-26",
+      "lastSeenDate": "2026-08-14",
+      "society": "Lakeview Res.",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1025,
+      "rent": 58000,
+      "deposit": 174000,
+      "photoCount": 18,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 4,
+      "liveWindowDays": 19,
+      "rentPerSf": 56.58536585365854
+    },
+    {
+      "listingId": "CP-0014",
+      "source": "CommonFloor",
+      "postedDate": "2026-07-11",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1250,
+      "rent": 55000,
+      "deposit": 165000,
+      "photoCount": 18,
+      "posterType": "unknown",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 6,
+      "liveWindowDays": 32,
+      "rentPerSf": 44
+    },
+    {
+      "listingId": "CP-0015",
+      "source": "MagicBricks",
+      "postedDate": "2026-07-11",
+      "lastSeenDate": "2026-07-21",
+      "society": "Lakeview Res.",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1275,
+      "rent": 57500,
+      "deposit": null,
+      "photoCount": 4,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 28,
+      "liveWindowDays": 10,
+      "rentPerSf": 45.09803921568628
+    },
+    {
+      "listingId": "CP-0016",
+      "source": "NoBroker",
+      "postedDate": "2026-05-30",
+      "lastSeenDate": "2026-08-04",
+      "society": "Lakeview Res.",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1375,
+      "rent": 72000,
+      "deposit": 432000,
+      "photoCount": 5,
+      "posterType": "owner",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 14,
+      "liveWindowDays": 66,
+      "rentPerSf": 52.36363636363637
+    },
+    {
+      "listingId": "CP-0017",
+      "source": "Housing",
+      "postedDate": "2026-06-03",
+      "lastSeenDate": "2026-08-13",
+      "society": "Lakeview Residences",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1050,
+      "rent": 58000,
+      "deposit": 348000,
+      "photoCount": 14,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 5,
+      "liveWindowDays": 71,
+      "rentPerSf": 55.23809523809524
+    },
+    {
+      "listingId": "CP-0018",
+      "source": "MagicBricks",
+      "postedDate": "2026-08-03",
+      "lastSeenDate": "2026-08-14",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1125,
+      "rent": 59500,
+      "deposit": 178500,
+      "photoCount": 11,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 4,
+      "liveWindowDays": 11,
+      "rentPerSf": 52.888888888888886
+    },
+    {
+      "listingId": "CP-0019",
+      "source": "CommonFloor",
+      "postedDate": "2026-07-25",
+      "lastSeenDate": "2026-08-10",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1375,
+      "rent": 59500,
+      "deposit": null,
+      "photoCount": 12,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 16,
+      "rentPerSf": 43.27272727272727
+    },
+    {
+      "listingId": "CP-0020",
+      "source": "NoBroker",
+      "postedDate": "2026-06-06",
+      "lastSeenDate": "2026-08-10",
+      "society": "Lake View Residency",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1350,
+      "rent": 61000,
+      "deposit": null,
+      "photoCount": 5,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 65,
+      "rentPerSf": 45.18518518518518
+    },
+    {
+      "listingId": "CP-0021",
+      "source": "NoBroker",
+      "postedDate": "2026-05-18",
+      "lastSeenDate": "2026-08-15",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1325,
+      "rent": 55000,
+      "deposit": null,
+      "photoCount": 12,
+      "posterType": "owner",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 3,
+      "liveWindowDays": 89,
+      "rentPerSf": 41.509433962264154
+    },
+    {
+      "listingId": "CP-0022",
+      "source": "MagicBricks",
+      "postedDate": "2026-07-04",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lakeview Residences",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1175,
+      "rent": 56500,
+      "deposit": null,
+      "photoCount": 10,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 39,
+      "rentPerSf": 48.08510638297872
+    },
+    {
+      "listingId": "CP-0023",
+      "source": "NoBroker",
+      "postedDate": "2026-05-27",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1200,
+      "rent": 57000,
+      "deposit": 228000,
+      "photoCount": 18,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 6,
+      "liveWindowDays": 77,
+      "rentPerSf": 47.5
+    },
+    {
+      "listingId": "CP-0024",
+      "source": "Housing",
+      "postedDate": "2026-06-27",
+      "lastSeenDate": "2026-07-11",
+      "society": "Lakeview Residences",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1350,
+      "rent": 61500,
+      "deposit": 307500,
+      "photoCount": 3,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 38,
+      "liveWindowDays": 14,
+      "rentPerSf": 45.55555555555556
+    },
+    {
+      "listingId": "CP-0025",
+      "source": "Housing",
+      "postedDate": "2026-06-18",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lakeview Residences",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1350,
+      "rent": 60000,
+      "deposit": 180000,
+      "photoCount": 3,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 55,
+      "rentPerSf": 44.44444444444444
+    },
+    {
+      "listingId": "CP-0026",
+      "source": "NoBroker",
+      "postedDate": "2026-08-01",
+      "lastSeenDate": "2026-08-05",
+      "society": "Lakeview Residences",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1350,
+      "rent": 58500,
+      "deposit": 175500,
+      "photoCount": 1,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 13,
+      "liveWindowDays": 4,
+      "rentPerSf": 43.333333333333336
+    },
+    {
+      "listingId": "CP-0027",
+      "source": "NoBroker",
+      "postedDate": "2026-05-24",
+      "lastSeenDate": "2026-08-02",
+      "society": "Lake View Residency",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1225,
+      "rent": 67000,
+      "deposit": 268000,
+      "photoCount": 0,
+      "posterType": "unknown",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 16,
+      "liveWindowDays": 70,
+      "rentPerSf": 54.69387755102041
+    },
+    {
+      "listingId": "CP-0028",
+      "source": "CommonFloor",
+      "postedDate": "2026-05-06",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1375,
+      "rent": 62000,
+      "deposit": 310000,
+      "photoCount": 12,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 6,
+      "liveWindowDays": 98,
+      "rentPerSf": 45.09090909090909
+    },
+    {
+      "listingId": "CP-0029",
+      "source": "Housing",
+      "postedDate": "2026-05-10",
+      "lastSeenDate": "2026-08-15",
+      "society": "Lakeview Residences",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1200,
+      "rent": 51000,
+      "deposit": 153000,
+      "photoCount": 3,
+      "posterType": "owner",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 97,
+      "rentPerSf": 42.5
+    },
+    {
+      "listingId": "CP-0030",
+      "source": "Housing",
+      "postedDate": "2026-04-22",
+      "lastSeenDate": "2026-08-17",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1325,
+      "rent": 63000,
+      "deposit": 189000,
+      "photoCount": 13,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 1,
+      "liveWindowDays": 117,
+      "rentPerSf": 47.54716981132076
+    },
+    {
+      "listingId": "CP-0031",
+      "source": "NoBroker",
+      "postedDate": "2026-05-29",
+      "lastSeenDate": "2026-08-05",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1100,
+      "rent": 54000,
+      "deposit": 324000,
+      "photoCount": 0,
+      "posterType": "broker",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 13,
+      "liveWindowDays": 68,
+      "rentPerSf": 49.09090909090909
+    },
+    {
+      "listingId": "CP-0032",
+      "source": "Housing",
+      "postedDate": "2026-07-28",
+      "lastSeenDate": "2026-08-04",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1275,
+      "rent": 62500,
+      "deposit": 187500,
+      "photoCount": 5,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 14,
+      "liveWindowDays": 7,
+      "rentPerSf": 49.01960784313726
+    },
+    {
+      "listingId": "CP-0033",
+      "source": "CommonFloor",
+      "postedDate": "2026-05-14",
+      "lastSeenDate": "2026-08-10",
+      "society": "Fern Grove Residency",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1105,
+      "rent": 59500,
+      "deposit": 297500,
+      "photoCount": 17,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveres",
+      "stem": "ferngroveres",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 88,
+      "rentPerSf": 53.84615384615385
+    },
+    {
+      "listingId": "CP-0034",
+      "source": "NoBroker",
+      "postedDate": "2026-06-17",
+      "lastSeenDate": "2026-07-04",
+      "society": "Fern Grove",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1255,
+      "rent": 63500,
+      "deposit": null,
+      "photoCount": 18,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngrove",
+      "stem": "ferngrove",
+      "phase": null,
+      "daysDark": 45,
+      "liveWindowDays": 17,
+      "rentPerSf": 50.59760956175299
+    },
+    {
+      "listingId": "CP-0035",
+      "source": "NoBroker",
+      "postedDate": "2026-05-15",
+      "lastSeenDate": "2026-08-13",
+      "society": "Fern Grove",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1255,
+      "rent": 65000,
+      "deposit": 260000,
+      "photoCount": 13,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngrove",
+      "stem": "ferngrove",
+      "phase": null,
+      "daysDark": 5,
+      "liveWindowDays": 90,
+      "rentPerSf": 51.79282868525896
+    },
+    {
+      "listingId": "CP-0036",
+      "source": "Housing",
+      "postedDate": "2026-05-21",
+      "lastSeenDate": "2026-08-08",
+      "society": "Fern Grove Residency",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1155,
+      "rent": 59500,
+      "deposit": 178500,
+      "photoCount": 3,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveres",
+      "stem": "ferngroveres",
+      "phase": null,
+      "daysDark": 10,
+      "liveWindowDays": 79,
+      "rentPerSf": 51.515151515151516
+    },
+    {
+      "listingId": "CP-0037",
+      "source": "MagicBricks",
+      "postedDate": "2026-05-16",
+      "lastSeenDate": "2026-08-11",
+      "society": "FernGrove Apartments",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1005,
+      "rent": 59000,
+      "deposit": null,
+      "photoCount": 11,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveapartments",
+      "stem": "ferngroveapartments",
+      "phase": null,
+      "daysDark": 7,
+      "liveWindowDays": 87,
+      "rentPerSf": 58.70646766169154
+    },
+    {
+      "listingId": "CP-0038",
+      "source": "CommonFloor",
+      "postedDate": "2026-07-04",
+      "lastSeenDate": "2026-08-12",
+      "society": "FernGrove Apartments",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1155,
+      "rent": 60000,
+      "deposit": 300000,
+      "photoCount": 9,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveapartments",
+      "stem": "ferngroveapartments",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 39,
+      "rentPerSf": 51.94805194805195
+    },
+    {
+      "listingId": "CP-0039",
+      "source": "NoBroker",
+      "postedDate": "2026-05-24",
+      "lastSeenDate": "2026-08-11",
+      "society": "Fern Grove",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1155,
+      "rent": 60500,
+      "deposit": 302500,
+      "photoCount": 9,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngrove",
+      "stem": "ferngrove",
+      "phase": null,
+      "daysDark": 7,
+      "liveWindowDays": 79,
+      "rentPerSf": 52.38095238095238
+    },
+    {
+      "listingId": "CP-0040",
+      "source": "NoBroker",
+      "postedDate": "2026-06-23",
+      "lastSeenDate": "2026-08-03",
+      "society": "FernGrove Apartments",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 955,
+      "rent": 62000,
+      "deposit": 186000,
+      "photoCount": 9,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveapartments",
+      "stem": "ferngroveapartments",
+      "phase": null,
+      "daysDark": 15,
+      "liveWindowDays": 41,
+      "rentPerSf": 64.92146596858639
+    },
+    {
+      "listingId": "CP-0041",
+      "source": "CommonFloor",
+      "postedDate": "2026-05-22",
+      "lastSeenDate": "2026-08-13",
+      "society": "Fern Grove",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1155,
+      "rent": 59000,
+      "deposit": null,
+      "photoCount": 18,
+      "posterType": "broker",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "ferngrove",
+      "stem": "ferngrove",
+      "phase": null,
+      "daysDark": 5,
+      "liveWindowDays": 83,
+      "rentPerSf": 51.082251082251084
+    },
+    {
+      "listingId": "CP-0042",
+      "source": "MagicBricks",
+      "postedDate": "2026-06-20",
+      "lastSeenDate": "2026-08-11",
+      "society": "Fern Grove",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 980,
+      "rent": 59000,
+      "deposit": 236000,
+      "photoCount": 2,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngrove",
+      "stem": "ferngrove",
+      "phase": null,
+      "daysDark": 7,
+      "liveWindowDays": 52,
+      "rentPerSf": 60.204081632653065
+    },
+    {
+      "listingId": "CP-0043",
+      "source": "MagicBricks",
+      "postedDate": "2026-08-03",
+      "lastSeenDate": "2026-08-18",
+      "society": "Fern Grove Residency",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1080,
+      "rent": 56000,
+      "deposit": 224000,
+      "photoCount": 0,
+      "posterType": "unknown",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "ferngroveres",
+      "stem": "ferngroveres",
+      "phase": null,
+      "daysDark": 0,
+      "liveWindowDays": 15,
+      "rentPerSf": 51.851851851851855
+    },
+    {
+      "listingId": "CP-0044",
+      "source": "Housing",
+      "postedDate": "2026-06-10",
+      "lastSeenDate": "2026-06-13",
+      "society": "FernGrove Apartments",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 930,
+      "rent": 60500,
+      "deposit": 181500,
+      "photoCount": 14,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveapartments",
+      "stem": "ferngroveapartments",
+      "phase": null,
+      "daysDark": 66,
+      "liveWindowDays": 3,
+      "rentPerSf": 65.05376344086021
+    },
+    {
+      "listingId": "CP-0045",
+      "source": "Housing",
+      "postedDate": "2026-07-07",
+      "lastSeenDate": "2026-08-12",
+      "society": "Blue Water Hts",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1245,
+      "rent": 58000,
+      "deposit": 290000,
+      "photoCount": 17,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "bluewaterhts",
+      "stem": "bluewaterhts",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 36,
+      "rentPerSf": 46.5863453815261
+    },
+    {
+      "listingId": "CP-0046",
+      "source": "Housing",
+      "postedDate": "2026-06-19",
+      "lastSeenDate": "2026-06-24",
+      "society": "Bluewater Heights",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1020,
+      "rent": 65000,
+      "deposit": null,
+      "photoCount": 9,
+      "posterType": "broker",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "bluewaterheights",
+      "stem": "bluewaterheights",
+      "phase": null,
+      "daysDark": 55,
+      "liveWindowDays": 5,
+      "rentPerSf": 63.72549019607843
+    },
+    {
+      "listingId": "CP-0047",
+      "source": "MagicBricks",
+      "postedDate": "2026-05-14",
+      "lastSeenDate": "2026-08-10",
+      "society": "Bluewater Height",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1020,
+      "rent": 54000,
+      "deposit": null,
+      "photoCount": 11,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "bluewaterheight",
+      "stem": "bluewaterheight",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 88,
+      "rentPerSf": 52.94117647058823
+    },
+    {
+      "listingId": "CP-0048",
+      "source": "MagicBricks",
+      "postedDate": "2026-06-29",
+      "lastSeenDate": "2026-08-08",
+      "society": "Blue Water Hts",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1270,
+      "rent": 59000,
+      "deposit": null,
+      "photoCount": 18,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "bluewaterhts",
+      "stem": "bluewaterhts",
+      "phase": null,
+      "daysDark": 10,
+      "liveWindowDays": 40,
+      "rentPerSf": 46.45669291338583
+    },
+    {
+      "listingId": "CP-0049",
+      "source": "Housing",
+      "postedDate": "2026-05-11",
+      "lastSeenDate": "2026-05-26",
+      "society": "Blue Water Hts",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1020,
+      "rent": 56000,
+      "deposit": 224000,
+      "photoCount": 14,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "bluewaterhts",
+      "stem": "bluewaterhts",
+      "phase": null,
+      "daysDark": 84,
+      "liveWindowDays": 15,
+      "rentPerSf": 54.90196078431372
+    },
+    {
+      "listingId": "CP-0050",
+      "source": "MagicBricks",
+      "postedDate": "2026-06-20",
+      "lastSeenDate": "2026-06-26",
+      "society": "Bluewater Height",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1220,
+      "rent": 65500,
+      "deposit": null,
+      "photoCount": 5,
+      "posterType": "owner",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "bluewaterheight",
+      "stem": "bluewaterheight",
+      "phase": null,
+      "daysDark": 53,
+      "liveWindowDays": 6,
+      "rentPerSf": 53.68852459016394
+    },
+    {
+      "listingId": "CP-0051",
+      "source": "NoBroker",
+      "postedDate": "2026-04-21",
+      "lastSeenDate": "2026-08-14",
+      "society": "Bluewater Heights",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1145,
+      "rent": 65500,
+      "deposit": 196500,
+      "photoCount": 18,
+      "posterType": "broker",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "bluewaterheights",
+      "stem": "bluewaterheights",
+      "phase": null,
+      "daysDark": 4,
+      "liveWindowDays": 115,
+      "rentPerSf": 57.20524017467249
+    },
+    {
+      "listingId": "CP-0052",
+      "source": "NoBroker",
+      "postedDate": "2026-04-25",
+      "lastSeenDate": "2026-08-07",
+      "society": "Bluewater Height",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1045,
+      "rent": 54000,
+      "deposit": 216000,
+      "photoCount": 6,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "bluewaterheight",
+      "stem": "bluewaterheight",
+      "phase": null,
+      "daysDark": 11,
+      "liveWindowDays": 104,
+      "rentPerSf": 51.67464114832536
+    },
+    {
+      "listingId": "CP-0053",
+      "source": "CommonFloor",
+      "postedDate": "2026-08-01",
+      "lastSeenDate": "2026-08-06",
+      "society": "Bluewater Heights",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1370,
+      "rent": 58000,
+      "deposit": 348000,
+      "photoCount": 6,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "bluewaterheights",
+      "stem": "bluewaterheights",
+      "phase": null,
+      "daysDark": 12,
+      "liveWindowDays": 5,
+      "rentPerSf": 42.33576642335766
+    },
+    {
+      "listingId": "CP-0054",
+      "source": "NoBroker",
+      "postedDate": "2026-07-08",
+      "lastSeenDate": "2026-08-15",
+      "society": "Bluewater Height",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1020,
+      "rent": 47500,
+      "deposit": 237500,
+      "photoCount": 10,
+      "posterType": "broker",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "bluewaterheight",
+      "stem": "bluewaterheight",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 38,
+      "rentPerSf": 46.568627450980394
+    },
+    {
+      "listingId": "CP-0055",
+      "source": "Housing",
+      "postedDate": "2026-07-16",
+      "lastSeenDate": "2026-08-02",
+      "society": "Maple Courtyard",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1455,
+      "rent": 47500,
+      "deposit": 237500,
+      "photoCount": 10,
+      "posterType": "unknown",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "maplecourtyard",
+      "stem": "maplecourtyard",
+      "phase": null,
+      "daysDark": 16,
+      "liveWindowDays": 17,
+      "rentPerSf": 32.64604810996563
+    },
+    {
+      "listingId": "CP-0056",
+      "source": "Housing",
+      "postedDate": "2026-06-16",
+      "lastSeenDate": "2026-08-11",
+      "society": "Maple Court Yard",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1430,
+      "rent": 54500,
+      "deposit": 163500,
+      "photoCount": 11,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "maplecourtyard",
+      "stem": "maplecourtyard",
+      "phase": null,
+      "daysDark": 7,
+      "liveWindowDays": 56,
+      "rentPerSf": 38.11188811188811
+    },
+    {
+      "listingId": "CP-0057",
+      "source": "MagicBricks",
+      "postedDate": "2026-07-06",
+      "lastSeenDate": "2026-08-07",
+      "society": "Maple Ctyard",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1455,
+      "rent": 51000,
+      "deposit": 204000,
+      "photoCount": 11,
+      "posterType": "broker",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "maplectyard",
+      "stem": "maplectyard",
+      "phase": null,
+      "daysDark": 11,
+      "liveWindowDays": 32,
+      "rentPerSf": 35.05154639175258
+    },
+    {
+      "listingId": "CP-0058",
+      "source": "NoBroker",
+      "postedDate": "2026-05-10",
+      "lastSeenDate": "2026-08-10",
+      "society": "Maple Courtyard",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1130,
+      "rent": 45500,
+      "deposit": 273000,
+      "photoCount": 12,
+      "posterType": "unknown",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "maplecourtyard",
+      "stem": "maplecourtyard",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 92,
+      "rentPerSf": 40.26548672566372
+    },
+    {
+      "listingId": "CP-0059",
+      "source": "MagicBricks",
+      "postedDate": "2026-06-13",
+      "lastSeenDate": "2026-08-12",
+      "society": "Maple Ctyard",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1405,
+      "rent": 50500,
+      "deposit": null,
+      "photoCount": 12,
+      "posterType": "broker",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "maplectyard",
+      "stem": "maplectyard",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 60,
+      "rentPerSf": 35.94306049822064
+    },
+    {
+      "listingId": "CP-0060",
+      "source": "MagicBricks",
+      "postedDate": "2026-05-11",
+      "lastSeenDate": "2026-08-15",
+      "society": "Maple Courtyard",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1130,
+      "rent": 58500,
+      "deposit": 175500,
+      "photoCount": 9,
+      "posterType": "owner",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "maplecourtyard",
+      "stem": "maplecourtyard",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 96,
+      "rentPerSf": 51.769911504424776
+    },
+    {
+      "listingId": "CP-0061",
+      "source": "MagicBricks",
+      "postedDate": "2026-07-01",
+      "lastSeenDate": "2026-08-07",
+      "society": "Maple Courtyard",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1480,
+      "rent": 56500,
+      "deposit": 169500,
+      "photoCount": 0,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "maplecourtyard",
+      "stem": "maplecourtyard",
+      "phase": null,
+      "daysDark": 11,
+      "liveWindowDays": 37,
+      "rentPerSf": 38.17567567567568
+    },
+    {
+      "listingId": "CP-0062",
+      "source": "Housing",
+      "postedDate": "2026-07-27",
+      "lastSeenDate": "2026-08-10",
+      "society": "Maple Courtyard",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1330,
+      "rent": 61500,
+      "deposit": 307500,
+      "photoCount": 6,
+      "posterType": "broker",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "maplecourtyard",
+      "stem": "maplecourtyard",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 14,
+      "rentPerSf": 46.2406015037594
+    },
+    {
+      "listingId": "CP-0063",
+      "source": "MagicBricks",
+      "postedDate": "2026-06-22",
+      "lastSeenDate": "2026-08-15",
+      "society": "Park Side Terrace",
+      "locality": "Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1015,
+      "rent": 55500,
+      "deposit": 277500,
+      "photoCount": 0,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "parksideterrace",
+      "stem": "parksideterrace",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 54,
+      "rentPerSf": 54.679802955665025
+    },
+    {
+      "listingId": "CP-0064",
+      "source": "MagicBricks",
+      "postedDate": "2026-07-18",
+      "lastSeenDate": "2026-08-12",
+      "society": "Parkside Terrace",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1290,
+      "rent": 49500,
+      "deposit": 247500,
+      "photoCount": 2,
+      "posterType": "owner",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "parksideterrace",
+      "stem": "parksideterrace",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 25,
+      "rentPerSf": 38.372093023255815
+    },
+    {
+      "listingId": "CP-0065",
+      "source": "NoBroker",
+      "postedDate": "2026-07-29",
+      "lastSeenDate": "2026-08-10",
+      "society": "Parkside Terraces",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1040,
+      "rent": 62000,
+      "deposit": 186000,
+      "photoCount": 8,
+      "posterType": "owner",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "parksideterraces",
+      "stem": "parksideterraces",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 12,
+      "rentPerSf": 59.61538461538461
+    },
+    {
+      "listingId": "CP-0066",
+      "source": "CommonFloor",
+      "postedDate": "2026-08-08",
+      "lastSeenDate": "2026-08-11",
+      "society": "Park Side Terrace",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1290,
+      "rent": 57000,
+      "deposit": 171000,
+      "photoCount": 14,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "parksideterrace",
+      "stem": "parksideterrace",
+      "phase": null,
+      "daysDark": 7,
+      "liveWindowDays": 3,
+      "rentPerSf": 44.18604651162791
+    },
+    {
+      "listingId": "CP-0067",
+      "source": "Housing",
+      "postedDate": "2026-07-27",
+      "lastSeenDate": "2026-08-17",
+      "society": "Parkside Terraces",
+      "locality": "Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1140,
+      "rent": 56500,
+      "deposit": 226000,
+      "photoCount": 0,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "parksideterraces",
+      "stem": "parksideterraces",
+      "phase": null,
+      "daysDark": 1,
+      "liveWindowDays": 21,
+      "rentPerSf": 49.56140350877193
+    },
+    {
+      "listingId": "CP-0068",
+      "source": "NoBroker",
+      "postedDate": "2026-06-24",
+      "lastSeenDate": "2026-08-08",
+      "society": "Parkside Terraces",
+      "locality": "Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1040,
+      "rent": 56500,
+      "deposit": 282500,
+      "photoCount": 0,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "parksideterraces",
+      "stem": "parksideterraces",
+      "phase": null,
+      "daysDark": 10,
+      "liveWindowDays": 45,
+      "rentPerSf": 54.32692307692308
+    },
+    {
+      "listingId": "CP-0069",
+      "source": "Housing",
+      "postedDate": "2026-06-21",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1050,
+      "rent": 60500,
+      "deposit": 300000,
+      "photoCount": 6,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 52,
+      "rentPerSf": 57.61904761904762
+    },
+    {
+      "listingId": "CP-0070",
+      "source": "NoBroker",
+      "postedDate": "2026-08-13",
+      "lastSeenDate": "2026-08-15",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1375,
+      "rent": 63000,
+      "deposit": null,
+      "photoCount": 5,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 3,
+      "liveWindowDays": 2,
+      "rentPerSf": 45.81818181818182
+    },
+    {
+      "listingId": "CP-0071",
+      "source": "MagicBricks",
+      "postedDate": "2026-05-17",
+      "lastSeenDate": "2026-08-08",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1100,
+      "rent": 58000,
+      "deposit": 348000,
+      "photoCount": 6,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 10,
+      "liveWindowDays": 83,
+      "rentPerSf": 52.72727272727273
+    },
+    {
+      "listingId": "CP-0072",
+      "source": "CommonFloor",
+      "postedDate": "2026-07-02",
+      "lastSeenDate": "2026-08-12",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1350,
+      "rent": 68500,
+      "deposit": 274000,
+      "photoCount": 6,
+      "posterType": "unknown",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 41,
+      "rentPerSf": 50.74074074074074
+    },
+    {
+      "listingId": "CP-0073",
+      "source": "Housing",
+      "postedDate": "2026-06-03",
+      "lastSeenDate": "2026-08-13",
+      "society": "Lake View Residency",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1050,
+      "rent": 58000,
+      "deposit": 348000,
+      "photoCount": 13,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 5,
+      "liveWindowDays": 71,
+      "rentPerSf": 55.23809523809524
+    },
+    {
+      "listingId": "CP-0074",
+      "source": "NoBroker",
+      "postedDate": "2026-06-27",
+      "lastSeenDate": "2026-07-11",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1350,
+      "rent": 61500,
+      "deposit": 307500,
+      "photoCount": 2,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 38,
+      "liveWindowDays": 14,
+      "rentPerSf": 45.55555555555556
+    },
+    {
+      "listingId": "CP-0075",
+      "source": "MagicBricks",
+      "postedDate": "2026-07-28",
+      "lastSeenDate": "2026-08-04",
+      "society": "Lake View Residency",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1275,
+      "rent": 62500,
+      "deposit": 187500,
+      "photoCount": 4,
+      "posterType": "unknown",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 14,
+      "liveWindowDays": 7,
+      "rentPerSf": 49.01960784313726
+    },
+    {
+      "listingId": "CP-0076",
+      "source": "CommonFloor",
+      "postedDate": "2026-05-21",
+      "lastSeenDate": "2026-08-08",
+      "society": "Fern Grove Residency",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1155,
+      "rent": 59500,
+      "deposit": 178500,
+      "photoCount": 2,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveres",
+      "stem": "ferngroveres",
+      "phase": null,
+      "daysDark": 10,
+      "liveWindowDays": 79,
+      "rentPerSf": 51.515151515151516
+    },
+    {
+      "listingId": "CP-0077",
+      "source": "Housing",
+      "postedDate": "2026-06-10",
+      "lastSeenDate": "2026-06-13",
+      "society": "FernGrove Apartments",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": 930,
+      "rent": 60500,
+      "deposit": 181500,
+      "photoCount": 13,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "ferngroveapartments",
+      "stem": "ferngroveapartments",
+      "phase": null,
+      "daysDark": 66,
+      "liveWindowDays": 3,
+      "rentPerSf": 65.05376344086021
+    },
+    {
+      "listingId": "CP-0078",
+      "source": "NoBroker",
+      "postedDate": "2026-06-20",
+      "lastSeenDate": "2026-06-26",
+      "society": "Bluewater Height",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1220,
+      "rent": 65500,
+      "deposit": null,
+      "photoCount": 4,
+      "posterType": "owner",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "bluewaterheight",
+      "stem": "bluewaterheight",
+      "phase": null,
+      "daysDark": 53,
+      "liveWindowDays": 6,
+      "rentPerSf": 53.68852459016394
+    },
+    {
+      "listingId": "CP-0079",
+      "source": "MagicBricks",
+      "postedDate": "2026-05-10",
+      "lastSeenDate": "2026-08-10",
+      "society": "Maple Courtyard",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1130,
+      "rent": 46000,
+      "deposit": 273000,
+      "photoCount": 11,
+      "posterType": "unknown",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "maplecourtyard",
+      "stem": "maplecourtyard",
+      "phase": null,
+      "daysDark": 8,
+      "liveWindowDays": 92,
+      "rentPerSf": 40.70796460176991
+    },
+    {
+      "listingId": "CP-0080",
+      "source": "CommonFloor",
+      "postedDate": "2026-07-18",
+      "lastSeenDate": "2026-08-12",
+      "society": "Parkside Terrace",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1290,
+      "rent": 50000,
+      "deposit": 247500,
+      "photoCount": 1,
+      "posterType": "owner",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "parksideterrace",
+      "stem": "parksideterrace",
+      "phase": null,
+      "daysDark": 6,
+      "liveWindowDays": 25,
+      "rentPerSf": 38.75968992248062
+    },
+    {
+      "listingId": "CP-0081",
+      "source": "MagicBricks",
+      "postedDate": "2026-08-14",
+      "lastSeenDate": "2026-08-18",
+      "society": "Lakeview Residences",
+      "locality": "Harlur Road",
+      "bhk": 3,
+      "furnishing": "semi-furnished",
+      "areaSqft": 1175,
+      "rent": 58000,
+      "deposit": 280000,
+      "photoCount": 11,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 0,
+      "liveWindowDays": 4,
+      "rentPerSf": 49.361702127659576
+    },
+    {
+      "listingId": "CP-0082",
+      "source": "NoBroker",
+      "postedDate": "2026-08-09",
+      "lastSeenDate": "2026-08-18",
+      "society": "Lake View Residency",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi furnished",
+      "areaSqft": 1100,
+      "rent": 12000,
+      "deposit": 50000,
+      "photoCount": 2,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 0,
+      "liveWindowDays": 9,
+      "rentPerSf": 10.909090909090908
+    },
+    {
+      "listingId": "CP-0083",
+      "source": "Housing",
+      "postedDate": "2026-08-01",
+      "lastSeenDate": "2026-08-17",
+      "society": "Lakeview Res.",
+      "locality": "Harlur Road",
+      "bhk": 2,
+      "furnishing": "fully furnished",
+      "areaSqft": 1180,
+      "rent": 185000,
+      "deposit": 600000,
+      "photoCount": 17,
+      "posterType": "broker",
+      "furnishingNorm": "fully furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 1,
+      "liveWindowDays": 16,
+      "rentPerSf": 156.77966101694915
+    },
+    {
+      "listingId": "CP-0084",
+      "source": "CommonFloor",
+      "postedDate": "2026-08-16",
+      "lastSeenDate": "2026-08-11",
+      "society": "Blue Water Hts",
+      "locality": "Kasavanahalli",
+      "bhk": 2,
+      "furnishing": "unfurnished",
+      "areaSqft": 1210,
+      "rent": 52000,
+      "deposit": null,
+      "photoCount": 0,
+      "posterType": "unknown",
+      "furnishingNorm": "unfurnished",
+      "nameKey": "bluewaterhts",
+      "stem": "bluewaterhts",
+      "phase": null,
+      "daysDark": 7,
+      "liveWindowDays": -5,
+      "rentPerSf": 42.97520661157025
+    },
+    {
+      "listingId": "CP-0085",
+      "source": "MagicBricks",
+      "postedDate": "2026-05-02",
+      "lastSeenDate": "2026-05-04",
+      "society": "Lakeview Residences Phase 1",
+      "locality": "Harlur-Sarjapur Road",
+      "bhk": 1,
+      "furnishing": "semi-furnished",
+      "areaSqft": 2100,
+      "rent": 60000,
+      "deposit": 300000,
+      "photoCount": 8,
+      "posterType": "broker",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres phase1",
+      "stem": "lakeviewres",
+      "phase": "phase1",
+      "daysDark": 106,
+      "liveWindowDays": 2,
+      "rentPerSf": 28.571428571428573
+    },
+    {
+      "listingId": "CP-0086",
+      "source": "NoBroker",
+      "postedDate": "2026-07-21",
+      "lastSeenDate": "2026-08-18",
+      "society": "Lake View Residency",
+      "locality": "Haralur",
+      "bhk": 2,
+      "furnishing": "semi-furnished",
+      "areaSqft": null,
+      "rent": 57000,
+      "deposit": null,
+      "photoCount": 6,
+      "posterType": "owner",
+      "furnishingNorm": "semi-furnished",
+      "nameKey": "lakeviewres",
+      "stem": "lakeviewres",
+      "phase": null,
+      "daysDark": 0,
+      "liveWindowDays": 28,
+      "rentPerSf": null
+    }
+  ],
+  "clonePairs": [
+    {
+      "aId": "CP-0001",
+      "bId": "CP-0069",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0004",
+      "bId": "CP-0070",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0008",
+      "bId": "CP-0071",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0012",
+      "bId": "CP-0072",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0017",
+      "bId": "CP-0073",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0024",
+      "bId": "CP-0074",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0032",
+      "bId": "CP-0075",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0036",
+      "bId": "CP-0039",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0036",
+      "bId": "CP-0076",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0039",
+      "bId": "CP-0076",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0044",
+      "bId": "CP-0077",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0050",
+      "bId": "CP-0078",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0058",
+      "bId": "CP-0079",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    },
+    {
+      "aId": "CP-0064",
+      "bId": "CP-0080",
+      "kind": "same-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "deposit exactly equal",
+        "rent within 2%"
+      ]
+    }
+  ],
+  "unitClusters": [
+    {
+      "id": "unit-CP-0001",
+      "memberIds": [
+        "CP-0001",
+        "CP-0069"
+      ],
+      "representativeId": "CP-0001",
+      "rentMin": 60000,
+      "rentMax": 60500,
+      "nameKeys": [
+        "lakeviewres"
+      ]
+    },
+    {
+      "id": "unit-CP-0004",
+      "memberIds": [
+        "CP-0004",
+        "CP-0070"
+      ],
+      "representativeId": "CP-0004",
+      "rentMin": 62500,
+      "rentMax": 63000,
+      "nameKeys": [
+        "lakeviewres"
+      ]
+    },
+    {
+      "id": "unit-CP-0008",
+      "memberIds": [
+        "CP-0008",
+        "CP-0071"
+      ],
+      "representativeId": "CP-0008",
+      "rentMin": 58000,
+      "rentMax": 58000,
+      "nameKeys": [
+        "lakeviewres",
+        "lakeviewres phase1"
+      ]
+    },
+    {
+      "id": "unit-CP-0012",
+      "memberIds": [
+        "CP-0012",
+        "CP-0072"
+      ],
+      "representativeId": "CP-0012",
+      "rentMin": 68500,
+      "rentMax": 68500,
+      "nameKeys": [
+        "lakeviewres",
+        "lakeviewres phase1"
+      ]
+    },
+    {
+      "id": "unit-CP-0017",
+      "memberIds": [
+        "CP-0017",
+        "CP-0073"
+      ],
+      "representativeId": "CP-0017",
+      "rentMin": 58000,
+      "rentMax": 58000,
+      "nameKeys": [
+        "lakeviewres"
+      ]
+    },
+    {
+      "id": "unit-CP-0024",
+      "memberIds": [
+        "CP-0024",
+        "CP-0074"
+      ],
+      "representativeId": "CP-0024",
+      "rentMin": 61500,
+      "rentMax": 61500,
+      "nameKeys": [
+        "lakeviewres"
+      ]
+    },
+    {
+      "id": "unit-CP-0032",
+      "memberIds": [
+        "CP-0032",
+        "CP-0075"
+      ],
+      "representativeId": "CP-0032",
+      "rentMin": 62500,
+      "rentMax": 62500,
+      "nameKeys": [
+        "lakeviewres",
+        "lakeviewres phase1"
+      ]
+    },
+    {
+      "id": "unit-CP-0036",
+      "memberIds": [
+        "CP-0036",
+        "CP-0039",
+        "CP-0076"
+      ],
+      "representativeId": "CP-0039",
+      "rentMin": 59500,
+      "rentMax": 60500,
+      "nameKeys": [
+        "ferngrove",
+        "ferngroveres"
+      ]
+    },
+    {
+      "id": "unit-CP-0044",
+      "memberIds": [
+        "CP-0044",
+        "CP-0077"
+      ],
+      "representativeId": "CP-0044",
+      "rentMin": 60500,
+      "rentMax": 60500,
+      "nameKeys": [
+        "ferngroveapartments"
+      ]
+    },
+    {
+      "id": "unit-CP-0050",
+      "memberIds": [
+        "CP-0050",
+        "CP-0078"
+      ],
+      "representativeId": "CP-0050",
+      "rentMin": 65500,
+      "rentMax": 65500,
+      "nameKeys": [
+        "bluewaterheight"
+      ]
+    },
+    {
+      "id": "unit-CP-0058",
+      "memberIds": [
+        "CP-0058",
+        "CP-0079"
+      ],
+      "representativeId": "CP-0058",
+      "rentMin": 45500,
+      "rentMax": 46000,
+      "nameKeys": [
+        "maplecourtyard"
+      ]
+    },
+    {
+      "id": "unit-CP-0064",
+      "memberIds": [
+        "CP-0064",
+        "CP-0080"
+      ],
+      "representativeId": "CP-0064",
+      "rentMin": 49500,
+      "rentMax": 50000,
+      "nameKeys": [
+        "parksideterrace"
+      ]
+    }
+  ],
+  "suspects": [
+    {
+      "aId": "CP-0026",
+      "bId": "CP-0053",
+      "kind": "cross-stem",
+      "evidence": [
+        "posted/last-seen within 3d",
+        "area within 25sf",
+        "rent within 2%"
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "stem": "ferngrove",
+      "nameKeys": [
+        "ferngrove",
+        "ferngroveres"
+      ],
+      "status": "suspected",
+      "independentBridges": 1,
+      "note": "Only 1 bridging unit — likely the same society, but a human confirms before the math merges them."
+    },
+    {
+      "stem": "lakeview",
+      "nameKeys": [
+        "lakeviewres",
+        "lakeviewres phase1"
+      ],
+      "status": "merged",
+      "independentBridges": 3,
+      "note": "3 independent cross-posted units bridge these spellings — treated as one society."
+    }
+  ],
+  "aliasSuggestions": [
+    {
+      "a": "bluewaterheight",
+      "b": "bluewaterheights",
+      "heuristic": "compact-prefix"
+    },
+    {
+      "a": "bluewaterheights",
+      "b": "bluewaterhts",
+      "heuristic": "token-abbrev"
+    },
+    {
+      "a": "ferngroveapartments",
+      "b": "ferngroveres",
+      "heuristic": "token-abbrev"
+    },
+    {
+      "a": "maplecourtyard",
+      "b": "maplectyard",
+      "heuristic": "token-abbrev"
+    },
+    {
+      "a": "parksideterrace",
+      "b": "parksideterraces",
+      "heuristic": "compact-prefix"
+    }
+  ],
+  "trust": {
+    "CP-0001": {
+      "listingId": "CP-0001",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0002": {
+      "listingId": "CP-0002",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 87d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0003": {
+      "listingId": "CP-0003",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 77d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0004": {
+      "listingId": "CP-0004",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0005": {
+      "listingId": "CP-0005",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0006": {
+      "listingId": "CP-0006",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0007": {
+      "listingId": "CP-0007",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "stale-gray",
+          "label": "not seen for 17d (14–30d gray zone) — half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0008": {
+      "listingId": "CP-0008",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 83d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0009": {
+      "listingId": "CP-0009",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "stale-gray",
+          "label": "not seen for 15d (14–30d gray zone) — half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0010": {
+      "listingId": "CP-0010",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 94d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "few-photos",
+          "label": "2 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0011": {
+      "listingId": "CP-0011",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0012": {
+      "listingId": "CP-0012",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0013": {
+      "listingId": "CP-0013",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0014": {
+      "listingId": "CP-0014",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0015": {
+      "listingId": "CP-0015",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "stale-gray",
+          "label": "not seen for 28d (14–30d gray zone) — half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0016": {
+      "listingId": "CP-0016",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 66d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0017": {
+      "listingId": "CP-0017",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 71d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0018": {
+      "listingId": "CP-0018",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0019": {
+      "listingId": "CP-0019",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0020": {
+      "listingId": "CP-0020",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 65d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0021": {
+      "listingId": "CP-0021",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 89d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0022": {
+      "listingId": "CP-0022",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0023": {
+      "listingId": "CP-0023",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 77d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0024": {
+      "listingId": "CP-0024",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 38d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0025": {
+      "listingId": "CP-0025",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0026": {
+      "listingId": "CP-0026",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "1 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0027": {
+      "listingId": "CP-0027",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "stale-gray",
+          "label": "not seen for 16d (14–30d gray zone) — half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0028": {
+      "listingId": "CP-0028",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 98d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0029": {
+      "listingId": "CP-0029",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 97d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0030": {
+      "listingId": "CP-0030",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 117d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0031": {
+      "listingId": "CP-0031",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 68d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0032": {
+      "listingId": "CP-0032",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0033": {
+      "listingId": "CP-0033",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 88d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0034": {
+      "listingId": "CP-0034",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 45d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0035": {
+      "listingId": "CP-0035",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 90d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0036": {
+      "listingId": "CP-0036",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "aspirational-ask",
+          "label": "listed 79d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0037": {
+      "listingId": "CP-0037",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 87d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0038": {
+      "listingId": "CP-0038",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0039": {
+      "listingId": "CP-0039",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 79d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0040": {
+      "listingId": "CP-0040",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "stale-gray",
+          "label": "not seen for 15d (14–30d gray zone) — half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0041": {
+      "listingId": "CP-0041",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 83d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0042": {
+      "listingId": "CP-0042",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "2 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0043": {
+      "listingId": "CP-0043",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0044": {
+      "listingId": "CP-0044",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 66d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0045": {
+      "listingId": "CP-0045",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0046": {
+      "listingId": "CP-0046",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 55d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0047": {
+      "listingId": "CP-0047",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 88d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0048": {
+      "listingId": "CP-0048",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0049": {
+      "listingId": "CP-0049",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 84d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0050": {
+      "listingId": "CP-0050",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 53d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0051": {
+      "listingId": "CP-0051",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 115d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0052": {
+      "listingId": "CP-0052",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 104d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0053": {
+      "listingId": "CP-0053",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0054": {
+      "listingId": "CP-0054",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0055": {
+      "listingId": "CP-0055",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "stale-gray",
+          "label": "not seen for 16d (14–30d gray zone) — half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0056": {
+      "listingId": "CP-0056",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0057": {
+      "listingId": "CP-0057",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0058": {
+      "listingId": "CP-0058",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 92d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0059": {
+      "listingId": "CP-0059",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0060": {
+      "listingId": "CP-0060",
+      "grade": "B",
+      "weight": 0.5,
+      "reasons": [
+        {
+          "code": "aspirational-ask",
+          "label": "listed 96d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0061": {
+      "listingId": "CP-0061",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0062": {
+      "listingId": "CP-0062",
+      "grade": "A",
+      "weight": 1,
+      "reasons": []
+    },
+    "CP-0063": {
+      "listingId": "CP-0063",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0064": {
+      "listingId": "CP-0064",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "2 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0065": {
+      "listingId": "CP-0065",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0066": {
+      "listingId": "CP-0066",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0067": {
+      "listingId": "CP-0067",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0068": {
+      "listingId": "CP-0068",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0069": {
+      "listingId": "CP-0069",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0070": {
+      "listingId": "CP-0070",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0071": {
+      "listingId": "CP-0071",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "aspirational-ask",
+          "label": "listed 83d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0072": {
+      "listingId": "CP-0072",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0073": {
+      "listingId": "CP-0073",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "aspirational-ask",
+          "label": "listed 71d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        }
+      ]
+    },
+    "CP-0074": {
+      "listingId": "CP-0074",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 38d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        },
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "few-photos",
+          "label": "2 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0075": {
+      "listingId": "CP-0075",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0076": {
+      "listingId": "CP-0076",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "aspirational-ask",
+          "label": "listed 79d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "few-photos",
+          "label": "2 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0077": {
+      "listingId": "CP-0077",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 66d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        },
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "deposit-template",
+          "label": "deposit is exactly 3.0× rent — template smell",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0078": {
+      "listingId": "CP-0078",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "stale-dead",
+          "label": "not seen for 53d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        },
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0079": {
+      "listingId": "CP-0079",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "aspirational-ask",
+          "label": "listed 92d without renting — the market has refused this ask; treated as ceiling evidence at half weight",
+          "effect": "downweight"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0080": {
+      "listingId": "CP-0080",
+      "grade": "C",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "duplicate-copy",
+          "label": "cross-post of a unit already counted — its cluster representative carries the evidence",
+          "effect": "exclude"
+        },
+        {
+          "code": "few-photos",
+          "label": "1 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0081": {
+      "listingId": "CP-0081",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "subject-echo",
+          "label": "matches the subject deal’s area, deposit and timing — the deal must not benchmark against its own listing",
+          "effect": "quarantine"
+        }
+      ]
+    },
+    "CP-0082": {
+      "listingId": "CP-0082",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "impossible-price",
+          "label": "₹10.9/sf outside the credible ₹25–₹90/sf band — error or non-comparable",
+          "effect": "quarantine"
+        },
+        {
+          "code": "few-photos",
+          "label": "2 photo(s) — thin listing",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0083": {
+      "listingId": "CP-0083",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "impossible-price",
+          "label": "₹156.8/sf outside the credible ₹25–₹90/sf band — error or non-comparable",
+          "effect": "quarantine"
+        }
+      ]
+    },
+    "CP-0084": {
+      "listingId": "CP-0084",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "impossible-dates",
+          "label": "last seen 2026-08-11 before posted 2026-08-16 — provenance broken",
+          "effect": "quarantine"
+        },
+        {
+          "code": "few-photos",
+          "label": "0 photo(s) — thin listing",
+          "effect": "note"
+        },
+        {
+          "code": "unknown-poster",
+          "label": "poster type unknown",
+          "effect": "note"
+        }
+      ]
+    },
+    "CP-0085": {
+      "listingId": "CP-0085",
+      "grade": "D",
+      "weight": 0,
+      "reasons": [
+        {
+          "code": "bhk-area-mislabel",
+          "label": "1BHK at 2100sf sits outside 350–900sf — an attribute is wrong",
+          "effect": "quarantine"
+        },
+        {
+          "code": "stale-dead",
+          "label": "not seen for 106d (> 30d) — likely rented or withdrawn",
+          "effect": "exclude"
+        }
+      ]
+    },
+    "CP-0086": {
+      "listingId": "CP-0086",
+      "grade": "A",
+      "weight": 1,
+      "reasons": [
+        {
+          "code": "blank-area",
+          "label": "area not stated — similarity checks are weaker",
+          "effect": "note"
+        }
+      ]
+    }
+  },
+  "segments": [
+    {
+      "segmentId": "tier1",
+      "label": "Same society · 2BHK · semi-furnished",
+      "contributingIds": [
+        "CP-0001",
+        "CP-0002",
+        "CP-0004",
+        "CP-0008",
+        "CP-0009",
+        "CP-0010",
+        "CP-0011",
+        "CP-0013",
+        "CP-0015",
+        "CP-0017",
+        "CP-0018",
+        "CP-0019",
+        "CP-0020",
+        "CP-0022",
+        "CP-0023",
+        "CP-0025",
+        "CP-0026",
+        "CP-0028",
+        "CP-0030",
+        "CP-0032",
+        "CP-0086"
+      ],
+      "n": 21,
+      "weightedMedian": 59500,
+      "unweightedMedian": 59500,
+      "range": [
+        55500,
+        63000
+      ],
+      "looSwing": 0,
+      "distinctSources": 4,
+      "medianAgeDays": 6,
+      "confidence": "high",
+      "collectNext": []
+    },
+    {
+      "segmentId": "tier2-micromarket",
+      "label": "Wider micromarket · 2BHK · semi-furnished",
+      "contributingIds": [
+        "CP-0001",
+        "CP-0002",
+        "CP-0004",
+        "CP-0008",
+        "CP-0009",
+        "CP-0010",
+        "CP-0011",
+        "CP-0013",
+        "CP-0015",
+        "CP-0017",
+        "CP-0018",
+        "CP-0019",
+        "CP-0020",
+        "CP-0022",
+        "CP-0023",
+        "CP-0025",
+        "CP-0026",
+        "CP-0028",
+        "CP-0030",
+        "CP-0032",
+        "CP-0033",
+        "CP-0035",
+        "CP-0037",
+        "CP-0038",
+        "CP-0039",
+        "CP-0040",
+        "CP-0042",
+        "CP-0045",
+        "CP-0047",
+        "CP-0048",
+        "CP-0052",
+        "CP-0053",
+        "CP-0056",
+        "CP-0061",
+        "CP-0063",
+        "CP-0066",
+        "CP-0067",
+        "CP-0068",
+        "CP-0086"
+      ],
+      "n": 39,
+      "weightedMedian": 58500,
+      "unweightedMedian": 58500,
+      "range": [
+        54000,
+        65000
+      ],
+      "looSwing": 0,
+      "distinctSources": 4,
+      "medianAgeDays": 7,
+      "confidence": "high",
+      "collectNext": []
+    },
+    {
+      "segmentId": "furnished-lakeview",
+      "label": "Same society · 2BHK · fully furnished",
+      "contributingIds": [
+        "CP-0005",
+        "CP-0012",
+        "CP-0016",
+        "CP-0027"
+      ],
+      "n": 4,
+      "weightedMedian": 68000,
+      "unweightedMedian": 68250,
+      "range": [
+        67000,
+        72000
+      ],
+      "looSwing": 500,
+      "distinctSources": 3,
+      "medianAgeDays": 10,
+      "confidence": "low",
+      "collectNext": [
+        "Call CP-0005 and CP-0012 to confirm the asks are live and get an all-in number.",
+        "Pull Flent’s own furnished 2BHK lettings in adjacent micromarkets as a floor/ceiling check.",
+        "Ask Demand for furnished-room enquiry evidence before pricing rooms off this segment."
+      ]
+    },
+    {
+      "segmentId": "bhk3",
+      "label": "Any 3BHK in the pull",
+      "contributingIds": [],
+      "n": 0,
+      "weightedMedian": null,
+      "unweightedMedian": null,
+      "range": null,
+      "looSwing": null,
+      "distinctSources": 0,
+      "medianAgeDays": null,
+      "confidence": "insufficient",
+      "collectNext": [
+        "There is no usable 3BHK evidence in this pull — the only row was the subject’s own mislabeled cross-post.",
+        "Request a fresh 3BHK pull before answering any 3BHK question."
+      ]
+    }
+  ],
+  "verdict": {
+    "benchmarkSegmentId": "tier1",
+    "readings": [
+      {
+        "assumption": "listings-all-in",
+        "comparedAsk": 61000,
+        "deviationPct": 0.025210084033613446,
+        "direction": "above"
+      },
+      {
+        "assumption": "listings-base",
+        "comparedAsk": 56000,
+        "deviationPct": -0.058823529411764705,
+        "direction": "below"
+      }
+    ],
+    "asterisks": [
+      "Comparables are asking prices, not achieved rents — an ask benchmark systematically overstates what tenants pay; calibrate against signed rents before treating it as market truth.",
+      "Listing rents do not reliably state whether society maintenance is included; the two readings above bracket that ambiguity, and capturing maintenance-inclusion per listing is the single highest-value data fix."
+    ]
+  },
+  "overridesApplied": []
+}
