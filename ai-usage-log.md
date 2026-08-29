@@ -24,3 +24,27 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   threshold and rule (staleness cutoff, dedup criteria, alias policy, aspirational
   downweighting, confidence ladder, quarantine list, failure-case choice) —
   pending.
+
+## 2026-08-30 (build session, Tasks 1–7)
+
+- Claude wrote the TypeScript pipeline test-first against ground-truth numbers
+  from the exploration; candidate's ratified ruleset is the normative spec.
+- Two fixture corrections surfaced DURING build (both favoring the ratified
+  rules over the exploration preview): CP-0026 stays contributing (cross-society
+  near-clone → suspect queue, not duplicate) and CP-0015 stays at half weight
+  (gray, not dead) → Tier 1 N=21, median unchanged ₹59,500. Verified
+  independently in Python before fixing any test.
+- One design amendment made by Claude pending candidate sign-off: confidence
+  ladder now runs on effective N (Σ trust weights) with AND-ed criteria — the
+  ratified OR-form would have graded the 4-row furnished segment "medium" on
+  stability alone.
+- Golden-run fixture generated and eyeballed against FINDINGS before commit.
+
+## 2026-08-30 (build session, Tasks 8–13)
+
+- Claude built the review app (Vite + React) in Flent's visual language with the
+  frontend-design pass: evidence-funnel rail, ticker, ten scenes, live overrides.
+  Candidate directed the craft bar ("Shopify-Editions level, Flent's own idiom").
+- Verified in-browser: the override demo degrades confidence HIGH → MEDIUM when a
+  load-bearing comp is pulled — emergent from the ratified ladder, not scripted.
+- 58 automated tests green; production build clean.

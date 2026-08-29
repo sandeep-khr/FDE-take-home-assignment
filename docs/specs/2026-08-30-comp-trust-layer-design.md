@@ -102,9 +102,14 @@ proof should read as "this person already works here," not a portfolio piece.
 6. **Deposit signal: weak/contextual only.** Bangalore's historic norm is 5–10
    months (web-verified context), so high multiples are not junk markers; exact
    3.0× template pattern logged as observation only.
-7. **Confidence ladder:** High = N≥8 ∧ ≥3 sources ∧ LOO swing <₹1k ∧ median age
-   <45d · Medium = N 4–7 ∨ swing <₹2.5k · Low = N 2–3 ∨ single-source dominance ·
-   Insufficient = N≤1 ∨ swing ≥₹2.5k. Verdict always quotes median + range.
+7. **Confidence ladder** *(amended 2026-08-30 during build, pending candidate
+   sign-off)*: computed on **effective N = Σ trust weights** (half-weight
+   ceiling/gray evidence must not buy full confidence), criteria AND-ed per
+   level: High = effN≥8 ∧ ≥3 sources ∧ LOO swing <₹1k ∧ median age <45d ·
+   Medium = effN≥4 ∧ swing <₹2.5k · Low = effN≥2 · else Insufficient. (The
+   ratified OR-form graded the 4-row furnished segment "medium" on stability
+   alone — wrong in principle: stability of thin evidence is not confidence.)
+   Verdict always quotes median + range.
 8. **Verdict framing:** benchmark vs ask shown under both maintenance readings
    (listings all-in vs base) — the ambiguity flips the sign (+2.5% vs −6%) and is
    named the top data fix; ask-vs-achieved asterisk always present.
