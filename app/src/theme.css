@@ -132,7 +132,7 @@ a { color: inherit; }
   margin-bottom: 18px;
 }
 .eyebrow .flow { font-family: var(--mono); letter-spacing: 0; text-transform: none; color: var(--ink-60); font-weight: 500; }
-.scene-title { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; }
+.scene-title { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; text-wrap: balance; }
 .scene-title em { font-style: italic; color: var(--pine); }
 .scene-lede { margin-top: 16px; color: var(--ink-60); font-size: 16.5px; max-width: 640px; }
 
@@ -146,7 +146,8 @@ a { color: inherit; }
   font-size: clamp(46px, 7.2vw, 92px);
   line-height: 1.02;
   letter-spacing: -0.01em;
-  max-width: 13ch;
+  max-width: 14ch;
+  text-wrap: balance;
 }
 .hero h1 em { font-style: italic; color: var(--pine); }
 .hero-sub { margin-top: 26px; font-size: 17.5px; color: var(--ink-60); max-width: 56ch; }
@@ -327,10 +328,17 @@ table.ledger { border-collapse: collapse; width: 100%; font-size: 13px; }
   html { scroll-behavior: auto; }
   .btn:hover { transform: none; }
 }
+@media (max-width: 1040px) {
+  .rail-stage { padding: 3px 9px; font-size: 11px; }
+  .rail-inner { gap: 10px; }
+}
 @media (max-width: 900px) {
   .readings { grid-template-columns: 1fr; }
   .walk-row { grid-template-columns: 1fr; gap: 6px; }
   .walk-label { text-align: left; }
   .hero-specimen { display: none; }
   .rail-brand { display: none; }
+}
+@media (max-width: 760px) {
+  .rail-verdict { display: none; }
 }

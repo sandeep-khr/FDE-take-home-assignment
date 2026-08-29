@@ -39,3 +39,12 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   ratified OR-form would have graded the 4-row furnished segment "medium" on
   stability alone.
 - Golden-run fixture generated and eyeballed against FINDINGS before commit.
+
+## 2026-08-30 (build session, Tasks 8–13)
+
+- Claude built the review app (Vite + React) in Flent's visual language with the
+  frontend-design pass: evidence-funnel rail, ticker, ten scenes, live overrides.
+  Candidate directed the craft bar ("Shopify-Editions level, Flent's own idiom").
+- Verified in-browser: the override demo degrades confidence HIGH → MEDIUM when a
+  load-bearing comp is pulled — emergent from the ratified ladder, not scripted.
+- 58 automated tests green; production build clean.
