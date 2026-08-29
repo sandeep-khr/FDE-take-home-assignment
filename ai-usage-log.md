@@ -48,3 +48,13 @@ judgment entered. Feeds the AI-usage note required in the approach note.
 - Verified in-browser: the override demo degrades confidence HIGH → MEDIUM when a
   load-bearing comp is pulled — emergent from the ratified ladder, not scripted.
 - 58 automated tests green; production build clean.
+
+## 2026-08-30 (prep session)
+
+- Claude added the "act on it" strip to the verdict scene (closing the brief's
+  "output they could genuinely act on" requirement explicitly).
+- Claude wrote two PRIVATE prep documents (kept outside this repo): a study
+  guide covering every rule, threshold, formula and scope cut with worked
+  examples, and an approach-note skeleton (structure, beats, voice rules).
+  Agreement unchanged: the candidate writes all submission prose; Claude
+  critiques and fact-checks.
