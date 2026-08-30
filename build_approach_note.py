@@ -366,7 +366,7 @@ def build_document():
     add_hyperlink(p, "https://github.com/sandeep-khr/Flent-FDE-take-home-assignment", "github.com/sandeep-khr/Flent-FDE-take-home-assignment")
     r = p.add_run("   ·   Plan board: ")
     set_run_font(r, size=9.3, color=MUTED)
-    add_hyperlink(p, "https://github.com/users/sandeep-khr/projects/1/views/2", "github.com/users/sandeep-khr/projects/1")
+    add_hyperlink(p, "https://github.com/users/sandeep-khr/projects/1/views/2", "github.com/users/sandeep-khr/projects/1/views/2")
 
     add_heading(doc, "The problem, as I see it", 1)
     add_lead_para(doc, "A bad median looks just as precise as a good one. ",
