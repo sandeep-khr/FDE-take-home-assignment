@@ -180,3 +180,15 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   role, and the override control). The LLM version is banked as an
   execution-plan line: extend BOSS's existing Slack Q&A to cite these
   reason objects.
+
+## 2026-08-30 (approach-note drafting)
+
+- At the candidate's request, the working agreement was amended: Claude drafted
+  the approach note in the candidate's first-person voice, transcribing
+  decisions the candidate had already made through the project (all numbers
+  from the verified pipeline canon). Condition attached: the candidate performs
+  a real rewrite pass before submission so the note's own AI-disclosure
+  sentence ("drafted from my decisions, which I then rewrote") is true, and
+  adjusts that sentence if their actual process differs. Format decision:
+  4-page PDF over slides (prose carries judgment; the brief reads for
+  thinking), typeset after the rewrite in the app's visual language.
