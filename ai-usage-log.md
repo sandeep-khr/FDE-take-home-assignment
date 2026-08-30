@@ -139,3 +139,15 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   the upload end-to-end (27,000 → 25,917 credible → 11,709 units → 287 tier-1
   rows → banded benchmark), and the spread-ratio guard capped the synthetic
   market's confidence at LOW — the guardrail firing on unseen data.
+
+## 2026-08-30 (repo + upload experience)
+
+- Repo pushed to github.com/sandeep-khr/Flent-FDE-take-home-assignment
+  (private — solved traps stay away from other candidates until submission).
+- Candidate directed the upload UX: prominent drag-and-drop zone with the
+  13-column schema caption and specific validations (.csv only, ≤10MB,
+  non-empty, loud parser errors), and a "pipeline theater" (motion library) —
+  on every successful upload the six stages reveal sequentially with the REAL
+  numbers from that file's run. Honest theater: the work is already done; the
+  pacing exists so a human can follow the route. Skipped entirely under
+  prefers-reduced-motion.

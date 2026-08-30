@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import { funnelOf, inr, pct, usePipeline } from '../state';
+import UploadZone from './UploadZone';
 
 /**
  * The route map: how a CSV becomes a defensible number, with live counts.
@@ -7,17 +7,9 @@ import { funnelOf, inr, pct, usePipeline } from '../state';
  * the exact same pipeline, parsed entirely in this browser tab.
  */
 export default function PipelineMap() {
-  const { result, customFileName, loadError, loadCsv, resetToPacket } = usePipeline();
-  const fileRef = useRef<HTMLInputElement>(null);
+  const { result, customFileName } = usePipeline();
   const f = funnelOf(result);
   const [allIn, base] = result.verdict.readings;
-
-  const onFile = (file: File | undefined) => {
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => loadCsv(String(reader.result ?? ''), file.name);
-    reader.readAsText(file);
-  };
 
   const nodes = [
     {
@@ -57,35 +49,7 @@ export default function PipelineMap() {
           </span>
         ))}
       </div>
-      <div className="pipe-tool">
-        <input
-          ref={fileRef}
-          type="file"
-          accept=".csv,text/csv"
-          style={{ display: 'none' }}
-          aria-label="Upload a listings CSV"
-          onChange={e => {
-            onFile(e.target.files?.[0]);
-            e.target.value = '';
-          }}
-        />
-        <button className="btn btn--ghost btn--small" onClick={() => fileRef.current?.click()}>
-          Run your own pull through this pipeline
-        </button>
-        {customFileName && (
-          <button className="btn btn--small btn--human" onClick={resetToPacket}>
-            Back to the case packet
-          </button>
-        )}
-        <span className="pipe-note">
-          same 13-column schema · parsed in your browser — nothing leaves this tab
-        </span>
-      </div>
-      {loadError && (
-        <p className="pipe-error" role="alert">
-          Couldn&rsquo;t use that file: {loadError} The case-packet analysis is untouched.
-        </p>
-      )}
+      <UploadZone />
     </div>
   );
 }

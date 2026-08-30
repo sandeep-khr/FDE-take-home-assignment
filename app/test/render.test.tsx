@@ -59,12 +59,22 @@ describe('the review app', () => {
     expect(screen.getByText('minIndependentBridgesToMerge')).toBeTruthy();
   });
 
-  it('renders the pipeline map with live counts and the upload affordance', () => {
+  it('renders the pipeline map with live counts and the upload zone', () => {
     render(<App />);
     expect(screen.getByText('86 rows')).toBeTruthy();
     expect(screen.getByText('21 earn weight')).toBeTruthy();
-    expect(screen.getByText('Run your own pull through this pipeline')).toBeTruthy();
+    expect(screen.getByLabelText('Upload a listings CSV to run it through this pipeline')).toBeTruthy();
     expect(screen.getByText(/nothing leaves this tab/i)).toBeTruthy();
+    expect(screen.getByText(/needs the packet.s 13 columns/i)).toBeTruthy();
+    expect(screen.getByText('poster_type')).toBeTruthy();
+  });
+
+  it('upload validation: rejects a non-CSV file with a specific message', async () => {
+    render(<App />);
+    const input = screen.getByLabelText('Upload a listings CSV');
+    fireEvent.change(input, { target: { files: [new File(['x'], 'notes.txt', { type: 'text/plain' })] } });
+    await waitFor(() => expect(screen.getByText(/is not a \.csv file/)).toBeTruthy());
+    expect(screen.getByText('86 rows')).toBeTruthy();
   });
 
   it('upload: a valid CSV re-runs the whole pipeline on the new rows', async () => {

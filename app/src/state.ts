@@ -11,6 +11,8 @@ export interface PipelineStore {
   /** null = the bundled case-packet pull; otherwise the uploaded file's name. */
   customFileName: string | null;
   loadError: string | null;
+  /** Increments on every successful load — drives the pipeline theater. */
+  loadNonce: number;
   /** Run an uploaded CSV (same 13-column schema) through the same pipeline —
    * parsed entirely in the browser; nothing is transmitted anywhere. */
   loadCsv: (text: string, fileName: string) => void;
@@ -21,6 +23,7 @@ export function usePipelineStore(): PipelineStore {
   const [csvText, setCsvText] = useState(packetCsv);
   const [customFileName, setCustomFileName] = useState<string | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [loadNonce, setLoadNonce] = useState(0);
   const [overrides, setOverrides] = useState<Override[]>([]);
   const result = useMemo(() => runPipeline(csvText, DEFAULT_CONFIG, overrides), [csvText, overrides]);
   return {
@@ -30,6 +33,7 @@ export function usePipelineStore(): PipelineStore {
     clearOverrides: () => setOverrides([]),
     customFileName,
     loadError,
+    loadNonce,
     loadCsv: (text, fileName) => {
       try {
         runPipeline(text, DEFAULT_CONFIG); // validate before committing
@@ -37,6 +41,7 @@ export function usePipelineStore(): PipelineStore {
         setCustomFileName(fileName);
         setOverrides([]);
         setLoadError(null);
+        setLoadNonce(n => n + 1);
       } catch (e) {
         setLoadError(e instanceof Error ? e.message : String(e));
       }
