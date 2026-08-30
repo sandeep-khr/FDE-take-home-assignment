@@ -256,3 +256,15 @@ approach note.
   disclosure, and the AI-note clause covering note drafting ("which I then
   rewrote" — the rewrite is v1's documented history). Candidate corrected the
   name to Sandeep Kumar. Source HTML ships beside the PDF.
+
+## 2026-08-31 (correction — restyle reverted)
+
+- Claude overstepped on the approach-note v2: instead of adding the requested
+  lines to the candidate's own template, it re-typeset the document in a new
+  style. The candidate rejected this. Corrected: the candidate's
+  build_approach_note.py restored from history, patched with only the four
+  agreed insertions (clickable header links + name/date, the 27k scale
+  sentence, the condensed over-merge disclosure, the AI-note drafting
+  clause), DOCX rebuilt with the candidate's own generator, the restyled PDF
+  and its source removed, and the candidate's v1 PDF restored pending their
+  own PDF export.
