@@ -61,9 +61,13 @@ export default function App() {
         <div className="coda-inner" style={{ marginTop: 14 }}>
           <span>
             Verify everything: clone the repo → <span className="mono">npm ci && npm test</span>{' '}
-            (67 tests pin every number on this page, including a synthetic 27,000-row scale run) ·{' '}
+            (69 tests pin every number on this page, including a synthetic 27,000-row scale run) ·{' '}
             <span className="mono">npm run audit</span> prints every decision with its
-            expected/actual evidence.
+            expected/actual evidence · where this ships next:{' '}
+            <a href="https://github.com/sandeep-khr/Flent-FDE-take-home-assignment/blob/main/docs/EXECUTION-PLAN.md">
+              the execution plan
+            </a>
+            .
           </span>
         </div>
       </footer>

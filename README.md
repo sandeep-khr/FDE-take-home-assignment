@@ -56,7 +56,7 @@ npm run build   # static production build in dist/
 | `app/` | The review surface (Vite + React). No backend; the pipeline runs in your browser on the verbatim CSV. |
 | `data/listings.csv` | Byte-identical copy of the case packet's pull — enforced by a sha256 test. |
 | `exploration/` | Day-1 reconnaissance scripts and `FINDINGS.md`, the trap inventory. |
-| `docs/` | Design spec (ratified ruleset) and the implementation plan. |
+| `docs/` | Design spec, implementation plan, and `EXECUTION-PLAN.md` — deliverable 3: one parent issue + eight ordered sub-issues with a data-asks appendix. |
 | `ai-usage-log.md` | Running, honest log of where AI helped and where judgment entered. |
 
 ## Scale

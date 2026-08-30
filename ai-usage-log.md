@@ -202,3 +202,15 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   numerical errors. Open fixes flagged: add links/name/date, add the 27k scale
   sentence, extend the short AI note to mention note-drafting (matching this
   log), execution plan still a separate pending deliverable.
+
+## 2026-08-30 (execution plan drafted)
+
+- Candidate asked whether the "1 parent + 5–8 sub-issues" plan should live in
+  the project, and for a list of at-scale data suggestions (image hashes for
+  duplicate cross-search, etc.). Rulings: the plan lives in the repo as
+  docs/EXECUTION-PLAN.md (not as an app chapter — the app keeps its 5-minute
+  arc; coda links the plan); the data suggestions belong in the plan as a
+  "data asks by leverage" appendix, each justified by a failure observed in
+  the packet. Claude drafted the full plan from the agreed skeleton (all
+  decisions previously made together); candidate to do an editing pass, same
+  protocol as the approach note.
