@@ -17,11 +17,14 @@ export default function TrustBoard() {
   );
   const tally = { A: 0, B: 0, C: 0, D: 0 };
   for (const t of Object.values(result.trust)) tally[t.grade]++;
-  const byGradeThenId = [...result.listings].sort((a, b) => {
+  const MAX_ROWS = 500;
+  const sorted = [...result.listings].sort((a, b) => {
     const ga = result.trust[a.listingId]!.grade;
     const gb = result.trust[b.listingId]!.grade;
     return ga === gb ? a.listingId.localeCompare(b.listingId) : ga.localeCompare(gb);
   });
+  const byGradeThenId = sorted.slice(0, MAX_ROWS);
+  const hiddenRows = sorted.length - byGradeThenId.length;
 
   const confirm = (listingId: string, action: 'exclude' | 'reinstate') => {
     addOverride({ listingId, action, reason: reason.trim() });
@@ -172,6 +175,12 @@ export default function TrustBoard() {
             })}
           </tbody>
           </table>
+          {hiddenRows > 0 && (
+            <p className="mono" style={{ padding: '12px 16px', fontSize: 12.5, color: 'var(--ink-45)' }}>
+              showing the first {byGradeThenId.length} of {sorted.length.toLocaleString('en-IN')}{' '}
+              graded rows — every row is graded and counted; `npm run audit` prints them all
+            </p>
+          )}
         </div>
       </details>
     </section>

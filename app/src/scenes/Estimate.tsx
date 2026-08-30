@@ -165,12 +165,17 @@ function DelistingAside() {
         closest thing to transaction evidence in this dataset. The {fast.length} candidates:
       </p>
       <ul style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 6 }}>
-        {fast.map(l => (
+        {fast.slice(0, 12).map(l => (
           <li key={l.listingId} className="mono" style={{ fontSize: 13.5 }}>
             {l.listingId} · {l.society} · {l.furnishingNorm} · asked {inr(l.rent)} · gone after{' '}
             {l.liveWindowDays}d
           </li>
         ))}
+        {fast.length > 12 && (
+          <li className="mono" style={{ fontSize: 12.5, color: 'var(--ink-45)' }}>
+            + {fast.length - 12} more candidates
+          </li>
+        )}
       </ul>
       <p style={{ fontSize: 13.5, color: 'var(--ink-70)', marginTop: 12, maxWidth: 720 }}>
         Why it stays out of the math: a fast delist can also be an expiry or a repost, and{' '}

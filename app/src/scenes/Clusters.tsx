@@ -26,7 +26,7 @@ export default function Clusters() {
         }
       />
       <div className="card-grid">
-        {result.unitClusters.map(c => {
+        {result.unitClusters.slice(0, 60).map(c => {
           const members = c.memberIds.map(id => byId.get(id)!);
           const spreadPct = ((c.rentMax - c.rentMin) / c.rentMin) * 100;
           return (
@@ -72,6 +72,13 @@ export default function Clusters() {
           );
         })}
       </div>
+
+      {result.unitClusters.length > 60 && (
+        <p className="mono" style={{ marginTop: 14, fontSize: 12.5, color: 'var(--ink-45)' }}>
+          showing 60 of {result.unitClusters.length.toLocaleString('en-IN')} clusters — all folded
+          in the math
+        </p>
+      )}
 
       {suspect && (
         <div

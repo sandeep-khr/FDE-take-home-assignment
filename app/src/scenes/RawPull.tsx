@@ -7,7 +7,10 @@ export default function RawPull() {
   const { result } = usePipeline();
   const [source, setSource] = useState<string>('all');
   const sources = ['all', ...new Set(result.listings.map(l => l.source))];
-  const rows = result.listings.filter(l => source === 'all' || l.source === source);
+  const MAX_ROWS = 500;
+  const filtered = result.listings.filter(l => source === 'all' || l.source === source);
+  const rows = filtered.slice(0, MAX_ROWS);
+  const hiddenRows = filtered.length - rows.length;
   const spellings = new Set(result.listings.map(l => l.society)).size;
 
   return (
@@ -105,6 +108,12 @@ export default function RawPull() {
             ))}
           </tbody>
           </table>
+          {hiddenRows > 0 && (
+            <p className="mono" style={{ padding: '12px 16px', fontSize: 12.5, color: 'var(--ink-45)' }}>
+              showing the first {rows.length} of {filtered.length.toLocaleString('en-IN')} rows —
+              all of them are in the math
+            </p>
+          )}
         </div>
       </details>
     </section>

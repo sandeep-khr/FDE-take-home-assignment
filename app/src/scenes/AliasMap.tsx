@@ -37,7 +37,7 @@ export default function AliasMap() {
         }
       />
       <div className="card-grid">
-        {result.aliases.map(a => (
+        {result.aliases.slice(0, 24).map(a => (
           <div key={a.stem} className="card" style={styleFor[a.status]}>
             <div style={{ display: 'flex', gap: 8, justifyContent: 'space-between', alignItems: 'baseline' }}>
               <b style={{ textTransform: 'capitalize' }}>{a.stem} family</b>
@@ -62,11 +62,16 @@ export default function AliasMap() {
             <span className="chip">no listing evidence</span>
           </div>
           <div style={{ margin: '12px 0 10px', display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {result.aliasSuggestions.map(s => (
+            {result.aliasSuggestions.slice(0, 30).map(s => (
               <span key={`${s.a}~${s.b}`} className="chip" style={{ borderStyle: 'dotted', fontWeight: 500 }}>
                 {s.a} ↔ {s.b}
               </span>
             ))}
+            {result.aliasSuggestions.length > 30 && (
+              <span className="chip" style={{ borderStyle: 'dotted', fontWeight: 500 }}>
+                + {result.aliasSuggestions.length - 30} more
+              </span>
+            )}
           </div>
           <p style={{ fontSize: 13.5, color: 'var(--ink-60)' }}>
             Shown as suggestions for the review queue. They do not touch the math until a person
