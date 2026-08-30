@@ -37,7 +37,7 @@ export default function PipelineMap() {
 
   return (
     <div className="pipe-wrap">
-      <div className="pipe">
+      <div className="pipe" aria-label="Pipeline route with live counts">
         {nodes.map((n, i) => (
           <span key={n.label + i} className="pipe-step">
             {i > 0 && <span className="pipe-arrow" aria-hidden="true">→</span>}

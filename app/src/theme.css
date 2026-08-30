@@ -127,10 +127,19 @@ a { color: inherit; text-underline-offset: 3px; }
 
 /* ---------------- pipeline map (the route, with live counts) ------ */
 .pipe-wrap { margin-top: 54px; }
+@media (min-width: 1100px) {
+  .pipe-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 16px;
+    align-items: stretch;
+  }
+}
 .pipe {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  align-content: center;
   gap: 10px;
   border: 1px solid var(--rule);
   border-radius: 18px;
@@ -156,28 +165,34 @@ a { color: inherit; text-underline-offset: 3px; }
 .pipe-error { margin-top: 10px; font-size: 13.5px; color: #7e241c; background: var(--brick-tint); border-radius: 10px; padding: 10px 14px; max-width: 760px; }
 
 /* ---------------- upload zone (the tool's front door) -------------- */
-.zone-wrap { margin-top: 16px; }
+.zone-wrap { margin-top: 16px; display: flex; flex-direction: column; }
+@media (min-width: 1100px) {
+  .zone-wrap { margin-top: 0; }
+}
 .zone {
+  flex: 1;
   display: flex;
-  gap: 20px;
-  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
   border: 2px dashed color-mix(in srgb, var(--pine) 45%, var(--rule));
   border-radius: 18px;
   background: color-mix(in srgb, var(--pine-tint) 40%, transparent);
-  padding: 22px 26px;
+  padding: 24px 28px;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s, transform 0.15s;
 }
 .zone:hover { border-color: var(--pine); background: var(--pine-tint); }
 .zone--drag { border-color: var(--pine); background: var(--pine-tint); transform: scale(1.008); }
 .zone-icon {
-  font-size: 34px;
+  font-size: 26px;
   line-height: 1;
   color: var(--pine-deep);
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 14px;
-  padding: 14px 16px;
+  border-radius: 12px;
+  padding: 10px 13px;
 }
 .zone-title { font-size: 16.5px; font-weight: 600; }
 .zone-title .mono { font-weight: 600; }
@@ -224,7 +239,6 @@ a { color: inherit; text-underline-offset: 3px; }
 .theater-actions { display: flex; gap: 12px; margin-top: 26px; }
 @media (max-width: 640px) {
   .t-stage { grid-template-columns: 1fr; gap: 2px; }
-  .zone { flex-direction: column; align-items: flex-start; }
 }
 
 /* ---------------- the census (signature element) ------------------ */
