@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Approach note — Problem 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 17mm 16mm 16mm 16mm; }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 9.7pt; line-height: 1.52; color: #171512; background: #FAF7F0;
+  }
+  .runhead {
+    position: fixed; top: -11mm; left: 0; right: 0;
+    display: flex; justify-content: space-between;
+    font-family: 'Spline Sans Mono', monospace; font-size: 6.6pt; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #8a8577;
+  }
+  h1 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 24pt; line-height: 1.05; margin: 2mm 0 1.5mm; }
+  .kicker { font-family: 'Spline Sans Mono', monospace; font-size: 7.2pt; letter-spacing: 0.16em; text-transform: uppercase; color: #0E5A43; margin: 0 0 1mm; font-weight: 500; }
+  .meta { font-size: 8.6pt; color: #5c574c; margin: 0 0 1mm; }
+  .links { font-family: 'Spline Sans Mono', monospace; font-size: 7.6pt; color: #0E5A43; margin: 1.2mm 0 4mm; line-height: 1.7; }
+  .links a { color: #0E5A43; text-decoration: none; }
+  .links b { color: #171512; font-weight: 500; }
+  h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 13.5pt; color: #073B2C; margin: 4.6mm 0 1.4mm; }
+  p { margin: 0 0 2.2mm; }
+  ul { margin: 0 0 2.2mm 4.5mm; padding: 0; }
+  li { margin-bottom: 1.1mm; }
+  ol { margin: 0 0 2.2mm 5mm; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1mm 0 2.6mm; font-size: 8.8pt; }
+  th { text-align: left; font-size: 7.4pt; letter-spacing: 0.1em; text-transform: uppercase; color: #5c574c; padding: 1.4mm 2.4mm; border-bottom: 0.5pt solid #C9BFA9; }
+  td { padding: 1.5mm 2.4mm; border-bottom: 0.4pt solid #E0D7C4; vertical-align: top; }
+  .pb { break-before: page; }
+  strong { font-weight: 700; }
+  .num { font-family: 'Spline Sans Mono', monospace; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="runhead"><span>Flent FDE take-home · Market listing trust layer</span><span>Approach note · Problem 1</span></div>
+
+<p class="kicker">Approach note</p>
+<h1>Problem 1: The market data lies to us</h1>
+<p class="meta">Sandeep Kumar · 31 August 2026 · Flent Forward Deployed Engineer take-home | Bangalore rental listings</p>
+<p class="links">
+  <b>Live proof (5 min):</b> <a href="https://flent-fde-assignment.vercel.app">flent-fde-assignment.vercel.app</a> &nbsp;·&nbsp;
+  <b>Code:</b> <a href="https://github.com/sandeep-khr/Flent-FDE-take-home-assignment">github.com/sandeep-khr/Flent-FDE-take-home-assignment</a> &nbsp;·&nbsp;
+  <b>Plan board:</b> <a href="https://github.com/users/sandeep-khr/projects/1/views/2">github.com/users/sandeep-khr/projects/1</a>
+</p>
+
+<h2>The problem, as I see it</h2>
+<p>A bad median looks just as precise as a good one. That is the real failure here. In the case packet, a median across all 86 scraped listings is <span class="num">₹59,000</span>. It looks clean on a dashboard. But that pull also contains an obvious typo at <span class="num">₹12,000</span>, an outlier at <span class="num">₹1,85,000</span>, old listings, broker copies, and the subject home itself posted under the wrong BHK. A number can be neat while the evidence behind it is not.</p>
+<p>The person who feels this is the acquisition owner. They are deciding whether to put a multi-year rent obligation and roughly <span class="num">₹2.6 lakh</span> of capital behind one home. Supply is also negotiating against the benchmark. If the comparable set is really four homes dressed up as 30, one bad listing can move the answer by thousands. The brief makes the cost concrete: roughly ten extra vacancy days can push breakeven back by a month.</p>
+
+<h2>The framing I used</h2>
+<p>I did not treat this as a data-cleaning exercise. The problem is silent judgment. A system can silently trust a row, or silently delete it, and both choices turn an opinion into arithmetic. My aim is to make those choices visible. Each listing keeps its original values, its grade, and a plain reason for what happened to it. The market estimate then carries the confidence it has actually earned.</p>
+<p>That changes the product from &ldquo;here is the market rent&rdquo; to &ldquo;here is the evidence we have, what it supports, and what is still uncertain.&rdquo; It is a small distinction in wording, but it changes how safely the team can act.</p>
+
+<h2>The claim I am willing to make</h2>
+<p>For this deal, the layer can recover a defensible asking-rent benchmark from a polluted pull without hiding the messy parts. It should not pretend to predict the rent a tenant will finally sign for. That needs signed-rent history, which this packet does not contain.</p>
+
+<h2 class="pb">How the trust layer works</h2>
+<p>The flow is simple on purpose. Parse the raw file, normalize dates and names, fold obvious broker cross-posts into one physical unit, merge society spellings only when the evidence proves they refer to the same place, grade each row, and calculate a weighted median with a confidence level. Every threshold sits in one config object and is shown in the review surface.</p>
+
+<h2>What stays deterministic</h2>
+<p>Anything that moves the benchmark stays in plain code: parsing, matching rules, weights, median calculation, confidence checks and the final comparison. The same file should give the same result later. That matters when a reviewer asks why a listing was excluded or when a decision needs to be replayed after the outcome is known.</p>
+
+<h2>Where a person should decide</h2>
+<p>I deliberately leave two decisions open for review. First, cross-society near-matches go to a suspect queue rather than being auto-merged. CP-0026 and CP-0053 have similar rents, areas and dates, but their deposits and society names disagree. They may be similar homes, not the same home. Second, a reviewer can exclude or reinstate any row with a required reason. The estimate recomputes and the override sits beside the machine&rsquo;s original reasoning.</p>
+
+<h2>Where AI helps</h2>
+<p>AI is useful upstream: reading messy listing text, proposing normalized fields, and surfacing possible name matches for a person to inspect. I would not put a model inside the final calculation. A fluent explanation that misquotes one rupee is worse than no explanation. The decision math should remain inspectable and deterministic; AI can help prepare evidence, not quietly decide it.</p>
+
+<h2>How the layer handles imperfect evidence</h2>
+<table>
+  <tr><th>Evidence condition</th><th>How I treat it</th></tr>
+  <tr><td>Missing</td><td>Keep it blank. A missing area weakens a match; it never becomes a made-up number.</td></tr>
+  <tr><td>Stale</td><td>More than 30 days dark is excluded. Fifteen to 30 days is kept at half weight.</td></tr>
+  <tr><td>Conflicting</td><td>Show the spread inside duplicate clusters and send cross-society near-matches to review.</td></tr>
+  <tr><td>Unreliable</td><td>Quarantine or downweight with a written reason. Keep the original row in the audit trail.</td></tr>
+</table>
+
+<h2 class="pb">What the proof shows</h2>
+<p>The riskiest assumption was that understandable rules would leave enough good evidence to act on. The end-to-end run supports that claim for this case. The byte-checked CSV goes in unchanged. Twenty-one of the 86 listings contribute to the same-society, 2BHK, semi-furnished comparison set. Their effective sample is 16.0 after downweighting weaker evidence. The weighted-median asking-rent benchmark is <span class="num">₹59,500</span>, with a <span class="num">₹58,500</span> to <span class="num">₹60,000</span> bootstrap band and a <span class="num">₹55,500</span> to <span class="num">₹63,000</span> observed range.</p>
+<p>The result is HIGH confidence under the defined ladder: the evidence comes from four platforms, has a median age of six days, and the leave-one-out swing is <span class="num">₹0</span>. Removing any one contributor does not change the median. The raw <span class="num">₹59,000</span> result was close, but only by accident. In this packet the bad rows happen to offset one another. Cleaning still bought a known sample, a usable range, and evidence that is stable enough to challenge.</p>
+<p>The same pipeline handles Flent&rsquo;s real volume: a labeled synthetic 27,000-row file runs end to end in under three seconds in the browser, and the page&rsquo;s upload box will take your own pull.</p>
+<p>One mistake I would rather disclose than have found: my first duplicate rule was too loose and chained 31 different homes into one cluster, cutting the comparison set to two rows. Over-cleaning manufactures scarcity as surely as under-cleaning manufactures confidence, so the shipped rule is strict and its near-misses go to a human.</p>
+
+<h2>The trap that mattered most</h2>
+<p>CP-0081 is the subject flat cross-posted by a broker with a 3BHK label. It shares the subject&rsquo;s 1,175 sqft area, <span class="num">₹2.8 lakh</span> deposit and recent posting date. The layer quarantines it as a subject echo. If it were allowed into the comps, the landlord&rsquo;s own ask would help validate itself. It also explains why the 3BHK segment correctly returns N=0 instead of pretending a mislabeled row is evidence.</p>
+
+<h2>A result can be useful and still be incomplete</h2>
+<p>The landlord asks <span class="num">₹56,000</span> plus <span class="num">₹5,000</span> maintenance. Listing rents do not reliably say whether maintenance is included, so the honest verdict is two readings: the all-in ask is 2.5% above the benchmark; the base rent is 5.9% below it. I would not pick the reading that makes the deal look better. The sign flip is the finding, and it identifies the next piece of data to collect.</p>
+
+<h2>The deliberate failure case and scope cuts</h2>
+<p>When I ask for a furnished benchmark, only four rows survive, with an effective sample of 3.0. The system labels that LOW confidence and gives a collection list rather than a recommendation. For 3BHK it says INSUFFICIENT. This is intentional: refusing a weak answer is part of the product.</p>
+<ul>
+  <li>I did not build an achieved-rent model. Every listing is an ask; signed rents are needed before it can be calibrated.</li>
+  <li>I did not impute maintenance, adjust for floor or view, or add synthetic rows. At this sample size, those would create invented precision.</li>
+  <li>I did not build a locality map. The packet has anonymised societies and no coordinates; the real signal here is behavioural, not geographic.</li>
+  <li>I kept probabilistic record linkage as the scale path, not the v1 default. Strict matching plus a human queue is easier to audit at 86 rows.</li>
+</ul>
+
+<h2 class="pb">What I would validate next</h2>
+<p>First: capture whether maintenance is included in each listing rent. It changes this deal&rsquo;s verdict from above market to below market. I would test the field on ten live deals by calling the surviving fresh comps. If at least 80% can state inclusion clearly, we should see the two-reading verdict collapse into one. That is stronger evidence than choosing a default today.</p>
+<p>Second, I would log the benchmark beside eventual signed rent and days-to-fill. A fast delisting may hint that a listing cleared near its ask, but it can also be an expiry or repost, so it remains display-only for now. After enough signed outcomes, the team can measure the gap between asking rents and achieved rents instead of assuming they are the same.</p>
+
+<h2>Assumptions I made visible</h2>
+<table>
+  <tr><th>Choice</th><th>Working rule</th><th>Why I chose it</th></tr>
+  <tr><td>Staleness</td><td>&gt;30 days out; 15–30 days at 0.5 weight</td><td>A half-weight middle ground is safer than a sharp cut-off.</td></tr>
+  <tr><td>Duplicates</td><td>Dates within 3 days; area within 25 sqft; rent or deposit agrees</td><td>Strict rules protect against merging different homes that merely look alike.</td></tr>
+  <tr><td>Aliases</td><td>Two independent cross-posted homes bridge name spellings</td><td>One bridge can itself be a bad listing.</td></tr>
+  <tr><td>Confidence</td><td>Effective sample, source count, recency and leave-one-out swing</td><td>A stable number from very thin evidence should still be low confidence.</td></tr>
+</table>
+<p>These are working assumptions, not Flent policy. They are deliberately round, visible and easy to change. The release should show what changes when a threshold changes, rather than make the constants disappear into the pipeline.</p>
+
+<h2>How I would take this from proof to use</h2>
+<ol>
+  <li>Start with canonical ingest and the tested rules engine, so every raw field and decision can be replayed.</li>
+  <li>Add deduplication and alias review with a precision check on sampled clusters before allowing automatic folding at scale.</li>
+  <li>Ship the benchmark, band and confidence ladder inside the BOSS deal page, with overrides and reasons visible in two clicks.</li>
+  <li>Run in shadow mode on ten live deals. Watch reviewer override rate and the share of LOW or INSUFFICIENT outputs before widening rollout.</li>
+</ol>
+
+<h2>How I used AI</h2>
+<p>I used Claude to explore the case packet, surface traps, pair-build the tested pipeline, and draft this note from decisions I had already made, which I then rewrote. I checked results through the tests, golden run and independent calculations. I made the choices on framing, thresholds, human review and scope. The repository includes the full AI usage log.</p>
+
+</body>
+</html>

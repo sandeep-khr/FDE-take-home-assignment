@@ -246,3 +246,13 @@ approach note.
   the Splink name-drop removed. Claude transcribed the rewrite across #1–#9.
   The five-field coverage the brief requires stays explicit in
   docs/EXECUTION-PLAN.md, the deliverable of record.
+
+## 2026-08-31 (approach note v2)
+
+- Candidate asked Claude to apply the four agreed fixes and typeset the note.
+  Claude rebuilt the PDF from the candidate's v1 text verbatim (Chrome
+  print-to-PDF, the submission's own visual language), inserting only: the
+  header links/name/date, the 27,000-row scale sentence, the over-merge
+  disclosure, and the AI-note clause covering note drafting ("which I then
+  rewrote" — the rewrite is v1's documented history). Candidate corrected the
+  name to Sandeep Kumar. Source HTML ships beside the PDF.
