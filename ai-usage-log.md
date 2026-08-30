@@ -223,3 +223,9 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   candidate's text verbatim into GitHub issues #1–#9, wired the dependency
   references, and added all nine to the candidate's GitHub Project board.
   The document remains the canonical deliverable; the board mirrors it.
+- Board organized Linear-style at the candidate's direction: project renamed
+  with a reading-guide README; issues #2–#9 linked as native sub-issues of #1
+  (progress bar); custom fields Ship order / Cycle (4 paired phases) / Data
+  (real · golden packet · external capture) / Learns set on every item;
+  milestone "v1 — Comp Trust Layer" across all nine; two restrained labels
+  (parent, external-dependency) in the submission's palette.
