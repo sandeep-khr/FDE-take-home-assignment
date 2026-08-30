@@ -133,3 +133,9 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   deliverable — execution-plan skeleton drafted (parent + 8 ordered
   sub-issues with learns-per-step), candidate to write final ticket prose.
 - App coda now tells reviewers exactly how to verify the code (npm ci/test/audit).
+- Display layers cap for large files (census 860 cells, ledgers 500 rows,
+  galleries 12, clusters 60 — always with "showing X of Y, all in the math"
+  notes). Verified live in-browser: the synthetic 27,000-row file runs through
+  the upload end-to-end (27,000 → 25,917 credible → 11,709 units → 287 tier-1
+  rows → banded benchmark), and the spread-ratio guard capped the synthetic
+  market's confidence at LOW — the guardrail firing on unseen data.

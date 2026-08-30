@@ -42,7 +42,7 @@ export default function FailureCase() {
           }
         />
         <div className="card-grid" style={{ marginBottom: 40 }}>
-          {f.contributingIds.map(id => {
+          {f.contributingIds.slice(0, 8).map(id => {
             const l = byId.get(id)!;
             return (
               <div key={id} className="card">

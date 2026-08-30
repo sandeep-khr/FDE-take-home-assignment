@@ -66,8 +66,8 @@ export default function TrustBoard() {
           be true at once.
         </p>
       )}
-      <div className="card-grid" style={{ marginBottom: 44 }}>
-        {quarantined.map(l => {
+      <div className="card-grid" style={{ marginBottom: quarantined.length > 12 ? 12 : 44 }}>
+        {quarantined.slice(0, 12).map(l => {
           const t = result.trust[l.listingId]!;
           const story = t.reasons.find(r => r.effect === 'quarantine')!;
           return (
@@ -91,6 +91,13 @@ export default function TrustBoard() {
           );
         })}
       </div>
+
+      {quarantined.length > 12 && (
+        <p className="mono" style={{ margin: '0 0 40px', fontSize: 12.5, color: 'var(--ink-45)' }}>
+          showing 12 of {quarantined.length.toLocaleString('en-IN')} quarantined rows — all out of
+          the math, each with its reason
+        </p>
+      )}
 
       <details className="ledger-fold" open>
         <summary>
