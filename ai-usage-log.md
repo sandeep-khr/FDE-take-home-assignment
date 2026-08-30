@@ -214,3 +214,12 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   the packet. Claude drafted the full plan from the agreed skeleton (all
   decisions previously made together); candidate to do an editing pass, same
   protocol as the approach note.
+
+## 2026-08-30 (execution plan + project board)
+
+- The candidate authored docs/EXECUTION-PLAN.md themselves (parent + 8
+  sub-issues + a data-asks appendix justified by packet failures) and committed
+  it directly. Claude fact-checked (all numbers correct) and transcribed the
+  candidate's text verbatim into GitHub issues #1–#9, wired the dependency
+  references, and added all nine to the candidate's GitHub Project board.
+  The document remains the canonical deliverable; the board mirrors it.
