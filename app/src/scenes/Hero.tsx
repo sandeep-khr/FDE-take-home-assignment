@@ -14,10 +14,10 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-left">
             <p className="hero-case">
-              <span>FLT-FDE-2026-01</span>
-              <span>Lakeview Residences · 2BHK · semi-furnished</span>
-              <span>evidence snapshot 18 Aug 2026</span>
-              {customFileName && <span>custom pull: {customFileName}</span>}
+              <span>case · FLT-FDE-2026-01</span>
+              <span>subject home · Lakeview Residences · 2BHK · semi-furnished</span>
+              <span>evidence as of · 18 Aug 2026</span>
+              {customFileName && <span>custom pull · {customFileName}</span>}
             </p>
             <h1>
               The market data lies. <em>Grade it before you bet on it.</em>

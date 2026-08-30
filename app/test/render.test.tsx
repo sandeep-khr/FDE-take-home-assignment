@@ -67,6 +67,8 @@ describe('the review app', () => {
     expect(screen.getByText(/nothing leaves this tab/i)).toBeTruthy();
     expect(screen.getByText(/needs the packet.s 13 columns/i)).toBeTruthy();
     expect(screen.getByText('poster_type')).toBeTruthy();
+    expect(screen.getByText(/run the 27,000-row synthetic sample/)).toBeTruthy();
+    expect(screen.getByText('download it')).toBeTruthy();
   });
 
   it('upload validation: rejects a non-CSV file with a specific message', async () => {
@@ -81,7 +83,7 @@ describe('the review app', () => {
     render(<App />);
     const input = screen.getByLabelText('Upload a listings CSV');
     fireEvent.change(input, { target: { files: [new File([MINI_CSV], 'mini.csv', { type: 'text/csv' })] } });
-    await waitFor(() => expect(screen.getByText(/custom pull: mini\.csv/)).toBeTruthy());
+    await waitFor(() => expect(screen.getByText(/custom pull · mini\.csv/)).toBeTruthy());
     expect(screen.getByText('2 rows')).toBeTruthy();
     expect(screen.getByText('2 raw listings')).toBeTruthy();
     expect(screen.getByText('Back to the case packet')).toBeTruthy();

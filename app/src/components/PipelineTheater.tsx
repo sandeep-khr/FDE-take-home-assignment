@@ -9,20 +9,24 @@ import { inr, pct, usePipeline } from '../state';
  * route. Honest theater — every figure shown is from the actual result.
  */
 export default function PipelineTheater() {
-  const { result, customFileName, loadNonce } = usePipeline();
-  const [openFor, setOpenFor] = useState(0);
+  const { result, customFileName, loadNonce, loadingFile } = usePipeline();
+  const [visible, setVisible] = useState(false);
   const canShow = typeof matchMedia !== 'undefined';
   const reduce = canShow && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const running = loadingFile !== null;
+
+  // Sticky visibility: opens the moment a load begins, stays through the
+  // running→reveal flip (no one-frame gap for AnimatePresence to mis-exit on),
+  // closes only on user action.
+  useEffect(() => {
+    if (canShow && (running || loadNonce > 0)) setVisible(true);
+  }, [running, loadNonce, canShow]);
 
   useEffect(() => {
-    if (loadNonce > 0 && canShow) setOpenFor(loadNonce);
-  }, [loadNonce, canShow]);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpenFor(0);
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && !running && setVisible(false);
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [running]);
 
   const stages = useMemo(() => {
     const t = Object.values(result.trust);
@@ -44,7 +48,7 @@ export default function PipelineTheater() {
     ];
   }, [result]);
 
-  const open = openFor > 0;
+  const open = canShow && visible;
   const step = reduce ? 0 : 0.62;
 
   return (
@@ -55,7 +59,7 @@ export default function PipelineTheater() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={() => setOpenFor(0)}
+          onClick={() => !running && setVisible(false)}
         >
           <motion.div
             className="theater-card"
@@ -69,52 +73,77 @@ export default function PipelineTheater() {
               your file, through the pipeline
             </p>
             <h3 className="theater-title">
-              <span className="mono">{customFileName ?? 'listings.csv'}</span> — here is what just
-              happened to it
+              <span className="mono">{loadingFile ?? customFileName ?? 'listings.csv'}</span>
+              {running ? ' — running every rule over every row…' : ' — here is what just happened to it'}
             </h3>
             <div className="theater-progress">
-              <motion.div
-                className="theater-progress-fill"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: reduce ? 0 : stages.length * step + 0.4, ease: 'linear' }}
-              />
-            </div>
-            <div className="theater-stages">
-              {stages.map((s, i) => (
+              {running ? (
                 <motion.div
-                  key={s.k}
-                  className="t-stage"
-                  initial={{ opacity: 0, x: -14 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: reduce ? 0 : 0.3 + i * step, duration: reduce ? 0 : 0.4 }}
-                >
-                  <span className="t-k">{s.k}</span>
-                  <span className="t-text">{s.text}</span>
-                  <motion.b
-                    className="t-v"
-                    initial={{ opacity: 0, scale: 0.85 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: reduce ? 0 : 0.45 + i * step, type: 'spring', stiffness: 300, damping: 18 }}
-                  >
-                    {s.v}
-                  </motion.b>
-                </motion.div>
-              ))}
+                  className="theater-progress-fill"
+                  style={{ width: '38%' }}
+                  initial={{ x: '-40%' }}
+                  animate={{ x: '270%' }}
+                  transition={{ repeat: Infinity, duration: 1.1, ease: 'easeInOut' }}
+                />
+              ) : (
+                <motion.div
+                  className="theater-progress-fill"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: reduce ? 0 : stages.length * step + 0.4, ease: 'linear' }}
+                />
+              )}
             </div>
-            <motion.div
-              className="theater-actions"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: reduce ? 0 : 0.5 + stages.length * step }}
-            >
-              <a className="btn" href="#raw" onClick={() => setOpenFor(0)}>
-                Explore the evidence ↓
-              </a>
-              <button className="btn btn--ghost" onClick={() => setOpenFor(0)}>
-                Close
-              </button>
-            </motion.div>
+            {running ? (
+              <div className="theater-stages" style={{ opacity: 0.55 }}>
+                {['01 · parse', '02 · normalize', '03 · grade', '04 · one home, one vote', '05 · estimate', '06 · verdict'].map(k => (
+                  <div key={k} className="t-stage">
+                    <span className="t-k">{k}</span>
+                    <span className="t-text">…</span>
+                    <b className="t-v">·</b>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+            {!running && (
+              <>
+                <div className="theater-stages">
+                  {stages.map((s, i) => (
+                    <motion.div
+                      key={s.k}
+                      className="t-stage"
+                      initial={{ opacity: 0, x: -14 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: reduce ? 0 : 0.3 + i * step, duration: reduce ? 0 : 0.4 }}
+                    >
+                      <span className="t-k">{s.k}</span>
+                      <span className="t-text">{s.text}</span>
+                      <motion.b
+                        className="t-v"
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: reduce ? 0 : 0.45 + i * step, type: 'spring', stiffness: 300, damping: 18 }}
+                      >
+                        {s.v}
+                      </motion.b>
+                    </motion.div>
+                  ))}
+                </div>
+                <motion.div
+                  className="theater-actions"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: reduce ? 0 : 0.5 + stages.length * step }}
+                >
+                  <a className="btn" href="#raw" onClick={() => setVisible(false)}>
+                    Explore the evidence ↓
+                  </a>
+                  <button className="btn btn--ghost" onClick={() => setVisible(false)}>
+                    Close
+                  </button>
+                </motion.div>
+              </>
+            )}
           </motion.div>
         </motion.div>
       )}

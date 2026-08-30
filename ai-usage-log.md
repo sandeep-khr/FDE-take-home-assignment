@@ -151,3 +151,15 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   numbers from that file's run. Honest theater: the work is already done; the
   pacing exists so a human can follow the route. Skipped entirely under
   prefers-reduced-motion.
+
+## 2026-08-30 (sample-in-app + loading UX)
+
+- Synthetic 27k sample now ships with the app (app/public) with an in-zone
+  one-click "run the sample" + download link, labeled SYN/never-evidence.
+- Candidate caught a real UX bug: 3–5s frozen page before the theater opened.
+  Fixed the two causes: upload validation now parses+normalizes only (ms)
+  instead of running the full pipeline twice, and the theater opens instantly
+  in a "running every rule over every row…" state before the heavy run (an
+  AnimatePresence flicker-race that wedged the modal in running state was
+  fixed with sticky visibility). Case-header labels clarified (case · subject
+  home · evidence as of).

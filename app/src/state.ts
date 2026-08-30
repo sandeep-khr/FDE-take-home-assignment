@@ -1,5 +1,7 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 import packetCsv from '../../data/listings.csv?raw';
+import { parseListingsCsv } from '@pipeline/csv';
+import { normalizeListing } from '@pipeline/normalize';
 import { runPipeline } from '@pipeline/pipeline';
 import { DEFAULT_CONFIG, type Override, type PipelineResult } from '@pipeline/types';
 
@@ -13,6 +15,10 @@ export interface PipelineStore {
   loadError: string | null;
   /** Increments on every successful load — drives the pipeline theater. */
   loadNonce: number;
+  /** Set the instant a file is accepted, before the heavy run — the theater
+   * opens on this so the user never stares at a frozen page. */
+  loadingFile: string | null;
+  beginLoad: (fileName: string) => void;
   /** Run an uploaded CSV (same 13-column schema) through the same pipeline —
    * parsed entirely in the browser; nothing is transmitted anywhere. */
   loadCsv: (text: string, fileName: string) => void;
@@ -24,6 +30,7 @@ export function usePipelineStore(): PipelineStore {
   const [customFileName, setCustomFileName] = useState<string | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [loadNonce, setLoadNonce] = useState(0);
+  const [loadingFile, setLoadingFile] = useState<string | null>(null);
   const [overrides, setOverrides] = useState<Override[]>([]);
   const result = useMemo(() => runPipeline(csvText, DEFAULT_CONFIG, overrides), [csvText, overrides]);
   return {
@@ -34,16 +41,26 @@ export function usePipelineStore(): PipelineStore {
     customFileName,
     loadError,
     loadNonce,
+    loadingFile,
+    beginLoad: fileName => {
+      setLoadError(null);
+      setLoadingFile(fileName);
+    },
     loadCsv: (text, fileName) => {
       try {
-        runPipeline(text, DEFAULT_CONFIG); // validate before committing
+        // Cheap validation only — parse + normalize catch every throw path
+        // (schema, numbers, dates, furnishing strings) in milliseconds. The
+        // single full run happens once, in the memo below.
+        parseListingsCsv(text).forEach(r => normalizeListing(r, DEFAULT_CONFIG));
         setCsvText(text);
         setCustomFileName(fileName);
         setOverrides([]);
         setLoadError(null);
         setLoadNonce(n => n + 1);
+        setLoadingFile(null);
       } catch (e) {
         setLoadError(e instanceof Error ? e.message : String(e));
+        setLoadingFile(null);
       }
     },
     resetToPacket: () => {
@@ -51,6 +68,7 @@ export function usePipelineStore(): PipelineStore {
       setCustomFileName(null);
       setOverrides([]);
       setLoadError(null);
+      setLoadingFile(null);
     },
   };
 }

@@ -13,10 +13,27 @@ const MAX_BYTES = 10 * 1024 * 1024;
  * Validation is loud and specific; a bad file never touches the analysis.
  */
 export default function UploadZone() {
-  const { customFileName, loadError, loadCsv, resetToPacket } = usePipeline();
+  const { customFileName, loadError, loadCsv, beginLoad, resetToPacket } = usePipeline();
   const fileRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
+  const [fetchingSample, setFetchingSample] = useState(false);
+
+  const runSample = async () => {
+    setLocalError(null);
+    setFetchingSample(true);
+    beginLoad('synthetic-27000.csv (sample)');
+    try {
+      const res = await fetch('/synthetic-27000.csv');
+      if (!res.ok) throw new Error(`sample not found (${res.status})`);
+      const text = await res.text();
+      setTimeout(() => loadCsv(text, 'synthetic-27000.csv (sample)'), 80);
+    } catch (e) {
+      setLocalError(`Couldn't fetch the sample: ${e instanceof Error ? e.message : String(e)}`);
+    } finally {
+      setFetchingSample(false);
+    }
+  };
 
   const takeFile = (file: File | undefined | null) => {
     setLocalError(null);
@@ -35,8 +52,11 @@ export default function UploadZone() {
       );
       return;
     }
+    beginLoad(file.name); // theater opens NOW, before the heavy run
     const reader = new FileReader();
-    reader.onload = () => loadCsv(String(reader.result ?? ''), file.name);
+    // The parse itself is synchronous and can take seconds at 27k rows — the
+    // short defer lets the browser paint the "running…" modal first.
+    reader.onload = () => setTimeout(() => loadCsv(String(reader.result ?? ''), file.name), 80);
     reader.readAsText(file);
   };
 
@@ -90,6 +110,14 @@ export default function UploadZone() {
             {SCHEMA.map(c => (
               <code key={c}>{c}</code>
             ))}
+          </p>
+          <p className="zone-sample" onClick={e => e.stopPropagation()}>
+            no pull handy?{' '}
+            <button className="zone-sample-btn" onClick={runSample} disabled={fetchingSample}>
+              {fetchingSample ? 'loading the sample…' : 'run the 27,000-row synthetic sample'}
+            </button>{' '}
+            · <a href="/synthetic-27000.csv" download>download it</a> · SYN-labeled, generated —
+            never case evidence
           </p>
         </div>
       </div>
