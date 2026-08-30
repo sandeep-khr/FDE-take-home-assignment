@@ -163,3 +163,20 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   AnimatePresence flicker-race that wedged the modal in running state was
   fixed with sticky visibility). Case-header labels clarified (case · subject
   home · evidence as of).
+
+## 2026-08-30 (Q&A decision + row dossier)
+
+- Candidate proposed an in-app AI chatbot for questions about the algorithm and
+  per-row reasoning, with topic guardrails. Ruled against together: a
+  probabilistic layer on top of a fully deterministic, fully explained system
+  undermines the thesis (one misquoted rupee kills "deserves trust"), robust
+  guardrails are a project not a feature (this audience will prompt-inject
+  it — including via uploaded CSVs), an LLM key needs a backend we
+  deliberately don't have, and the context pack says BOSS already answers
+  deal questions in Slack (the brief says don't rebuild BOSS).
+- Built instead: the Row Dossier — click any census cell or ledger id for the
+  complete deterministic story (raw fields, derived values, every rule with
+  expected/actual and fields examined, cluster and suspect roles, per-segment
+  role, and the override control). The LLM version is banked as an
+  execution-plan line: extend BOSS's existing Slack Q&A to cite these
+  reason objects.

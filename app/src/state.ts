@@ -19,6 +19,9 @@ export interface PipelineStore {
    * opens on this so the user never stares at a frozen page. */
   loadingFile: string | null;
   beginLoad: (fileName: string) => void;
+  /** Listing whose full dossier is open in the side panel. */
+  selectedId: string | null;
+  select: (id: string | null) => void;
   /** Run an uploaded CSV (same 13-column schema) through the same pipeline —
    * parsed entirely in the browser; nothing is transmitted anywhere. */
   loadCsv: (text: string, fileName: string) => void;
@@ -31,6 +34,7 @@ export function usePipelineStore(): PipelineStore {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [loadNonce, setLoadNonce] = useState(0);
   const [loadingFile, setLoadingFile] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   const [overrides, setOverrides] = useState<Override[]>([]);
   const result = useMemo(() => runPipeline(csvText, DEFAULT_CONFIG, overrides), [csvText, overrides]);
   return {
@@ -45,7 +49,10 @@ export function usePipelineStore(): PipelineStore {
     beginLoad: fileName => {
       setLoadError(null);
       setLoadingFile(fileName);
+      setSelectedId(null);
     },
+    selectedId,
+    select: setSelectedId,
     loadCsv: (text, fileName) => {
       try {
         // Cheap validation only — parse + normalize catch every throw path

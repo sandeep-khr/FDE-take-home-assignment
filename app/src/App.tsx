@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { PipelineContext, usePipelineStore } from './state';
 import PipelineTheater from './components/PipelineTheater';
+import RowDossier from './components/RowDossier';
 import Hero from './scenes/Hero';
 import RawPull from './scenes/RawPull';
 import TrustBoard from './scenes/TrustBoard';
@@ -34,6 +35,7 @@ export default function App() {
     <PipelineContext.Provider value={store}>
       <Progress />
       <PipelineTheater />
+      <RowDossier />
       <main>
         <Hero />
         <RawPull />

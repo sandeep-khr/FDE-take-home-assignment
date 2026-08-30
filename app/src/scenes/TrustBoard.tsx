@@ -8,7 +8,7 @@ import { inr, usePipeline } from '../state';
 
 /** Stage 2: every row graded, every grade explained, every call reversible. */
 export default function TrustBoard() {
-  const { result, addOverride, overrides } = usePipeline();
+  const { result, addOverride, overrides, select } = usePipeline();
   const [expanded, setExpanded] = useState<string | null>(null);
   const [reason, setReason] = useState('');
 
@@ -126,7 +126,11 @@ export default function TrustBoard() {
               const nextAction: 'exclude' | 'reinstate' = t.weight > 0 ? 'exclude' : 'reinstate';
               return (
                 <tr key={l.listingId} className={dim ? 'row-dim' : undefined}>
-                  <td className="mono keep-color" style={{ fontWeight: 600 }}>{l.listingId}</td>
+                  <td className="mono keep-color" style={{ fontWeight: 600 }}>
+                    <button className="id-link" onClick={() => select(l.listingId)} aria-label={`Open dossier for ${l.listingId} from ledger`}>
+                      {l.listingId}
+                    </button>
+                  </td>
                   <td className="keep-color"><GradeChip grade={t.grade} compact /></td>
                   <td className="num">{t.weight}</td>
                   <td>{l.society}</td>

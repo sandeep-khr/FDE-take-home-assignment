@@ -97,6 +97,16 @@ describe('the review app', () => {
     expect(screen.getByText('86 rows')).toBeTruthy(); // packet analysis intact
   });
 
+  it('row dossier: clicking a census cell opens the full deterministic story', () => {
+    render(<App />);
+    fireEvent.click(screen.getAllByLabelText('Open dossier for CP-0084')[0]!);
+    const panel = screen.getByLabelText('Dossier for CP-0084');
+    expect(within(panel).getAllByText(/last seen 2026-08-11/).length).toBeGreaterThan(0);
+    expect(within(panel).getAllByText('expected').length).toBeGreaterThan(0);
+    expect(within(panel).getByText(/fields examined/)).toBeTruthy();
+    expect(within(panel).getByText(/Weight in the math: ×0/)).toBeTruthy();
+  });
+
   it('live override: excluding a tier1 comp shrinks the funnel and logs the reason', () => {
     render(<App />);
     fireEvent.click(screen.getByLabelText('Exclude CP-0018'));

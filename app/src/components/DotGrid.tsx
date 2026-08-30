@@ -8,7 +8,7 @@ import { usePipeline } from '../state';
 const MAX_CELLS = 860; // ten packets' worth — beyond this, rendering a cell per row stops informing
 
 export default function DotGrid({ mode }: { mode: 'raw' | 'graded' }) {
-  const { result, overrides } = usePipeline();
+  const { result, overrides, select } = usePipeline();
   const shown = result.listings.slice(0, MAX_CELLS);
   const hidden = result.listings.length - shown.length;
   return (
@@ -27,7 +27,16 @@ export default function DotGrid({ mode }: { mode: 'raw' | 'graded' }) {
               : `${l.listingId} · grade ${t.grade} · weight ${t.weight} · ${
                   t.reasons.map(r => r.code).join(', ') || 'clean'
                 }`;
-          return <span key={l.listingId} className={cls} title={title} />;
+          return (
+            <button
+              key={l.listingId}
+              type="button"
+              className={cls}
+              title={title}
+              aria-label={`Open dossier for ${l.listingId}`}
+              onClick={() => select(l.listingId)}
+            />
+          );
         })}
       </div>
       {hidden > 0 && (
