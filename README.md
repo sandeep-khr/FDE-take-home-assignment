@@ -59,6 +59,14 @@ npm run build   # static production build in dist/
 | `docs/` | Design spec (ratified ruleset) and the implementation plan. |
 | `ai-usage-log.md` | Running, honest log of where AI helped and where judgment entered. |
 
+## Scale
+
+Flent's real pull is ~27,000 listings. The clone scan uses date-window
+blocking (identical results to the full pairwise scan), and the perf test
+runs a **synthetic, SYN-labeled 27,000-row file through the whole pipeline in
+under 3 seconds** (`pipeline/test/perf.test.ts`). Generate your own big file
+to drop on the upload button: `node scripts/synth.mjs 27000`.
+
 ## Provenance rules
 
 The case packet is the complete evidence. Nothing external enters the math; the

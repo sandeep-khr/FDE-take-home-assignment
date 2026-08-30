@@ -117,3 +117,19 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   identical pipeline (validated before commit; loud failure; overrides reset;
   nothing leaves the browser). Hardcoded quarantine ids in the UI were
   replaced with data-derived ones so arbitrary files can't crash the page.
+
+## 2026-08-30 (brief re-read + scale pass)
+
+- Candidate re-read the proof-of-work spec and worried the submission was "a
+  story, not a tool the team can verify." Checked against the brief together:
+  a small app is the most ambitious listed medium; "five minutes working beats
+  a large unfinished build"; the prototype→team-tool path is deliverable 3 by
+  name. The submission already is a tool (upload mode) + verifiable code
+  (repo, tests, audit).
+- Two real gaps the worry surfaced, closed: (1) scale credibility — clone scan
+  now uses date-window blocking with precomputed day ordinals; a labeled
+  synthetic 27,000-row generator + perf test prove the full pipeline runs in
+  <3s (so "run your own pull" holds for Flent's real volume); (2) the missing
+  deliverable — execution-plan skeleton drafted (parent + 8 ordered
+  sub-issues with learns-per-step), candidate to write final ticket prose.
+- App coda now tells reviewers exactly how to verify the code (npm ci/test/audit).
