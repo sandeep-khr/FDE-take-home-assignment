@@ -233,3 +233,16 @@ approach note.
   (real · golden packet · external capture) / Learns set on every item;
   milestone "v1 — Comp Trust Layer" across all nine; two restrained labels
   (parent, external-dependency) in the submission's palette.
+
+## 2026-08-31 (deploy + issue voice pass)
+
+- Candidate deployed the proof of work (flent-fde-assignment.vercel.app);
+  Claude smoke-tested the live site logged-out: pipeline numbers, census,
+  dossier, meta/favicon, and the 27k sample all verified.
+- Candidate reviewed the GitHub issues with a fresh eye, judged the uniform
+  Outcome/Scope/Prove-it template and polished closer lines as AI-flavored,
+  and directed a rewrite: plain titles, Goal / Done when / Depends / Open
+  question structure, uneven detail (dedup issue kept deepest), aphorisms and
+  the Splink name-drop removed. Claude transcribed the rewrite across #1–#9.
+  The five-field coverage the brief requires stays explicit in
+  docs/EXECUTION-PLAN.md, the deliverable of record.
