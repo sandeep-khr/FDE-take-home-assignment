@@ -153,7 +153,11 @@ export default function RowDossier() {
             </button>
           </div>
           <p className="dossier-line dim" style={{ marginTop: 8 }}>
-            Overrides re-run the pipeline live and are logged with your reason in chapter 08.
+            Overrides re-run the pipeline live; your call and reason land in{' '}
+            <a href="#human" onClick={() => select(null)}>
+              the override log (section 08 · The human)
+            </a>
+            .
           </p>
         </motion.aside>
       )}
