@@ -192,3 +192,13 @@ judgment entered. Feeds the AI-usage note required in the approach note.
   adjusts that sentence if their actual process differs. Format decision:
   4-page PDF over slides (prose carries judgment; the brief reads for
   thinking), typeset after the rewrite in the app's visual language.
+
+## 2026-08-30 (approach-note rewrite + fact-check)
+
+- Candidate rewrote the drafted note substantially (restructured sections,
+  their own phrasing throughout, new "claim I am willing to make" scoping
+  section, cut the over-merge story and the scale claim) and exported a 4-page
+  PDF. Claude ran a fact-check-only pass against the pipeline canon: zero
+  numerical errors. Open fixes flagged: add links/name/date, add the 27k scale
+  sentence, extend the short AI note to mention note-drafting (matching this
+  log), execution plan still a separate pending deliverable.
